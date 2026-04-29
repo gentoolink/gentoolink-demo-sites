@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mama Rosa's Woodfire Pizza — Vanderhoof, BC</title>
+  <link rel="stylesheet" href="../shared/style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="inner">
+    <div>
+      <div class="logo">Mama Rosa's <span>Woodfire</span></div>
+      <div class="tagline">Hand-stretched. Oak-fired. Made with love.</div>
+    </div>
+    <a href="#order" class="header-phone">Order Online</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero pizza-hero">
+  <div class="hero-content">
+    <h1>Pizza Worth<br><span>Coming Back For</span></h1>
+    <p>Wood-fired at 900°F. Fresh ingredients. Made to order every time. Now delivering across Vanderhoof & Prince George.</p>
+    <div class="hero-btns">
+      <a href="#order" class="btn btn-primary">Order Now</a>
+      <a href="#menu" class="btn btn-outline">See Menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- Trust Bar -->
+<div class="trust-bar">
+  <div class="inner">
+    <div class="trust-item">
+      <div class="trust-icon">🔥</div>
+      <span><strong>Woodfired at 900°F</strong></span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🥗</div>
+      <span><strong>Fresh Daily Ingredients</strong></span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🚗</div>
+      <span><strong>Delivery Available</strong></span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">★</div>
+      <span><strong>Family Owned Since 1998</strong></span>
+    </div>
+  </div>
+</div>
+
+<!-- Featured Pizza Tabs -->
+<section class="section">
+  <h2 class="section-title">House Specialties</h2>
+  <p class="section-sub">Click a pizza to see what's on it.</p>
+
+  <div class="tab-bar">
+    <button class="tab-btn active" data-tab="0">🌿 The Northern</button>
+    <button class="tab-btn" data-tab="1">🍄 The Truffle</button>
+    <button class="tab-btn" data-tab="2">🌶️ The Inferno</button>
+  </div>
+
+  <div class="tab-panel" id="pizzaTabs">
+    <div class="featured-pizza">
+      <div class="pizza-img" id="pizzaImg">🍕</div>
+      <div class="pizza-info">
+        <h3 id="pizzaName">The Northern</h3>
+        <p id="pizzaDesc">Smoked pulled pork, roasted red peppers, caramelized onions, BBQ drizzle, mozzarella & provolone blend.</p>
+        <div class="pizza-price" id="pizzaPrice">$22.50 — Large $28.50</div>
+        <a href="#order" class="btn btn-primary">Order This</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Menu -->
+<section id="menu" class="section menu-section">
+  <h2 class="section-title">Menu</h2>
+  <p class="section-sub">Prices exclude tax. Dine-in, takeout, or delivery.</p>
+
+  <div class="menu-columns">
+    <div class="menu-col">
+      <h3 class="menu-cat">🍕 Specialty Pizzas</h3>
+      <div class="menu-item">
+        <div class="menu-item-name">The Northern</div>
+        <div class="menu-item-desc">Smoked pulled pork, roasted peppers, caramelized onions, BBD drizzle</div>
+        <div class="menu-item-price">S $22.50 &nbsp; L $28.50</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-name">The Truffle</div>
+        <div class="menu-item-desc">Wild mushrooms, truffle oil, fontina, fresh thyme, parmesan</div>
+        <div class="menu-item-price">S $24.50 &nbsp; L $30.50</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-name">The Inferno</div>
+        <div class="menu-item-desc">Spicy Italian sausage, jalapeños, banana peppers, ghost pepper aioli</div>
+        <div class="menu-item-price">S $23.50 &nbsp; L $29.50</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-name">Mama Rosa Classic</div>
+        <div class="menu-item-desc">San Marzano sauce, fresh mozzarella, basil, extra virgin olive oil</div>
+        <div class="menu-item-price">S $19.50 &nbsp; L $25.50</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-name">The Garden</div>
+        <div class="menu-item-desc">Roasted zucchini, cherry tomatoes, spinach, feta, herb oil (vegetarian)</div>
+        <div class="menu-item-price">S $21.50 &nbsp; L $27.50</div>
+      </div>
+    </div>
+    <div class="menu-col">
+      <h3 class="menu-cat">🍟 Sides & Extras</h3>
+      <div class="menu-item">
+        <div class="menu-item-name">Woodfired Wings</div>
+        <div class="menu-item-desc">8 wings — choice of buffalo, garlic parmesan, or sweet chili</div>
+        <div class="menu-item-price">$14.50</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-name">Garlic Knots</div>
+        <div class="menu-item-desc">6 knots, butter, garlic, herbs, marinara dip</div>
+        <div class="menu-item-price">$8.50</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-name">Caesar Salad</div>
+        <div class="menu-item-desc">Romaine, house-made dressing, croutons, fresh parmesan</div>
+        <div class="menu-item-price">$9.50</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-name">Cannoli (2pc)</div>
+        <div class="menu-item-desc">Crispy shell, sweet ricotta, chocolate chips</div>
+        <div class="menu-item-price">$6.00</div>
+      </div>
+      <h3 class="menu-cat" style="margin-top:24px">🥤 Drinks</h3>
+      <div class="menu-item">
+        <div class="menu-item-name">Soft Drinks</div>
+        <div class="menu-item-desc">Coca-Cola, Sprite, root beer, iced tea</div>
+        <div class="menu-item-price">$2.50</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-name">Italian Soda</div>
+        <div class="menu-item-desc">Blood orange or raspberry</div>
+        <div class="menu-item-price">$3.50</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Order Section -->
+<section id="order" class="form-section">
+  <div class="form-box">
+    <h2>Order for Pickup or Delivery</h2>
+    <p>We need about 20 minutes to fire up your pizza.</p>
+    <form id="orderForm">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Maria Garcia" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="(250) 555-0100" required>
+        </div>
+        <div class="form-group">
+          <label for="type">Order Type</label>
+          <select id="type" name="type">
+            <option>Pickup</option>
+            <option>Delivery (+ $4.00)</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pizza">Pizza / Items</label>
+        <textarea id="pizza" name="pizza" placeholder="1x The Northern (Large), 1x Garlic Knots, 2x Coca-Cola..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="notes">Special Requests</label>
+        <input type="text" id="notes" name="notes" placeholder="Extra parmesan, no onions, etc.">
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%">Place Order</button>
+    </form>
+    <div class="form-success" id="orderSuccess">
+      ✓ Order received! We'll have it ready in about 20 minutes. We'll call when it's out of the oven.
+    </div>
+  </div>
+</section>
+
+<!-- Info -->
+<section class="section">
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>📍 Location</h3>
+      <p>142 Main Street<br>Vanderhoof, BC V0J 3A0</p>
+    </div>
+    <div class="info-card">
+      <h3>📞 Phone</h3>
+      <p><a href="tel:+16042187290">604-218-7290</a></p>
+    </div>
+    <div class="info-card">
+      <h3>⏰ Hours</h3>
+      <p>Tue–Thu: 11am – 9pm<br>Fri–Sat: 11am – 10pm<br>Sun: 12pm – 8pm<br>Mon: Closed</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p>Mama Rosa's Woodfire Pizza &mdash; Vanderhoof, BC &mdash; Est. 1998</p>
+  <p style="margin-top:6px">📞 <a href="tel:+16042187290">604-218-7290</a> &nbsp;|&nbsp; 📍 142 Main St, Vanderhoof</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
