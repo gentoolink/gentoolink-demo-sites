@@ -1,6 +1,11 @@
 {
   "specials": [
     {
+      "name": "Tonight's Special — Roasted Salmon with Lemon Butter",
+      "price": "21.95",
+      "description": "Herb-crusted Pacific salmon, lemon-butter glaze, garlic mashed potatoes, seasonal vegetables"
+    },
+    {
       "name": "Friday Fish & Chips",
       "price": "22.00",
       "description": "Beer-battered Pacific cod, hand-cut fries, slaw, tartar sauce"
