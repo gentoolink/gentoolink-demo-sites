@@ -14,23 +14,25 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="specials.html">Specials</a></li>
-        <li><a href="hours.html">Hours</a></li>
+        <li><a href="hours.html" class="active">Hours</a></li>
       </ul>
     </nav>
   </header>
-
   <main>
-    <h1>Hours</h1>
-    <div id="hours-content" class="hours-section">
-      <p>Loading...</p>
-    </div>
+    <section class="hours" aria-label="Operating hours" id="hours">
+      <h2>Hours</h2>
+      <ul class="hours-list" aria-label="Weekly hours">
+        <li>Monday – Thursday: 11:00 AM – 9:00 PM</li>
+        <li>Friday: 11:00 AM – 10:00 PM</li>
+        <li>Saturday: 11:00 AM – 10:00 PM</li>
+        <li>Sunday: 12:00 PM – 6:00 PM</li>
+      </ul>
+      <p class="hours-note">Hours subject to holidays and seasonal changes. Please call ahead to confirm.</p>
+    </section>
   </main>
-
   <footer>
-    <p>&copy; 2026 The Copper Kettle. All rights reserved.</p>
+    <p>© 2026 The Copper Kettle. All rights reserved.</p>
   </footer>
-
   <script src="app.js"></script>
-  <script>loadHoursFull();</script>
 </body>
 </html>
