@@ -113,14 +113,14 @@ body {
   justify-content: center;
   flex-wrap: wrap;
 }
-.hero-video {
-  margin: 32px auto 0;
+.intro-video {
+  margin: 0 auto;
   max-width: 700px;
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  box-shadow: var(--shadow);
 }
-.hero-video video {
+.intro-video video {
   width: 100%;
   display: block;
 }
