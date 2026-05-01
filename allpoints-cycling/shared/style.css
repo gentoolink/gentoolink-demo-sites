@@ -57,6 +57,8 @@ body {
 .logo img {
   height: 20px;
   width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
 }
 .logo span { color: var(--white); }
 .logo span span { color: var(--accent); }
