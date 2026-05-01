@@ -197,7 +197,7 @@ body {
 }
 .about-block p {
   color: var(--text-muted);
-  margin-bottom: 16px;
+  margin: 0 auto 16px;
   max-width: 720px;
   text-align: center;
 }
