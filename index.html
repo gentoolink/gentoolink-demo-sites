@@ -3,210 +3,767 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gentoolink Demo Sites — Client Portfolios</title>
+  <title>Gentoolink Demo Sites — See What Your Business Could Look Like</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --navy: #1a2e4a;
+      --forest: #1c3a2f;
+      --green: #2d5a47;
+      --gold: #c9a84c;
+      --gold-light: #e0c06a;
+      --cream: #faf8f3;
+      --white: #ffffff;
+      --bg: #f5f4f0;
+      --text: #2a2a2a;
+      --text-light: #6a6a6a;
+      --border: #e2ddd5;
+      --accent-orange: #e8722a;
+      --accent-brown: #8B4513;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --radius: 14px;
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --shadow-hover: 0 12px 40px rgba(0,0,0,0.14);
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #f4f4f2;
-      color: #1a1a1a;
-      line-height: 1.6;
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
     }
-    .container { max-width: 900px; margin: 0 auto; padding: 60px 24px; }
-    .page-header { text-align: center; margin-bottom: 56px; }
-    .page-header h1 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: #1e3a5f;
-      margin-bottom: 8px;
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    .page-header p { color: #666; font-size: 1.05rem; }
-    .badge {
+
+    img { max-width: 100%; display: block; }
+
+    /* ─── Top Banner ─── */
+    .top-banner {
+      background: var(--navy);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 10px 24px;
+      font-size: 0.85rem;
+      letter-spacing: 0.3px;
+    }
+    .top-banner strong {
+      color: var(--gold);
+    }
+
+    /* ─── Header ─── */
+    .site-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .logo span { color: var(--gold); }
+    .header-cta {
+      background: var(--forest);
+      color: var(--white);
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .header-cta:hover {
+      background: var(--green);
+      transform: translateY(-1px);
+      opacity: 1;
+    }
+
+    /* ─── Hero ─── */
+    .hero {
+      background: var(--navy);
+      padding: 90px 28px 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.1) 0%, transparent 60%);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath d='M0,0 Q720,50 1440,0 L1440,50 L0,50 Z' fill='%23f5f4f0'/%3E%3C/svg%3E") no-repeat center;
+      background-size: cover;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
       display: inline-block;
-      background: #e8722a;
-      color: #fff;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      padding: 6px 18px;
+      border-radius: 999px;
       font-size: 0.75rem;
       font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 20px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      margin-bottom: 24px;
     }
-    .page-header .badge { margin-bottom: 12px; }
-    .sites-grid { display: flex; flex-direction: column; gap: 24px; }
-    .site-card {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 580px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .hero-pitch {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      padding: 12px 24px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+    }
+    .hero-pitch .icon {
+      font-size: 1.2rem;
+    }
+    .hero-pitch strong {
+      color: var(--gold);
+    }
+    .hero-btns {
       display: flex;
-      border-left: 5px solid transparent;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
-    .site-card.plumber { border-left-color: #1e3a5f; }
-    .site-card.electrician { border-left-color: #1e3a5f; }
-    .site-card.pizzashop { border-left-color: #c4421a; }
-    .site-card.copperkettle { border-left-color: #8B4513; }
-    .site-card.church { border-left-color: #1c2d4f; }
-    .site-thumb {
-      width: 280px;
-      flex-shrink: 0;
-      background: #f0f0ee;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: all 0.25s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201,168,76,0.35);
+      opacity: 1;
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.1);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.35);
+      transform: translateY(-2px);
+      opacity: 1;
+    }
+
+    /* ─── How It Works Strip ─── */
+    .how-it-works {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 28px;
+    }
+    .hiw-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .hiw-step {
+      text-align: center;
+    }
+    .hiw-step .num {
+      width: 40px;
+      height: 40px;
+      background: var(--forest);
+      color: var(--gold);
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 4rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin: 0 auto 14px;
     }
-    .site-card.plumber .site-thumb { background: linear-gradient(135deg, #1e3a5f, #2d527a); }
-    .site-card.electrician .site-thumb { background: linear-gradient(135deg, #1a2e4a, #2d527a); }
-    .site-card.pizzashop .site-thumb { background: linear-gradient(135deg, #c4421a, #e8722a); }
-    .site-card.copperkettle .site-thumb { background: linear-gradient(135deg, #8B4513, #D4A574); }
-    .site-card.church .site-thumb { background: linear-gradient(135deg, #1c2d4f, #2a3f6f); }
-    .site-info { padding: 28px 32px; flex: 1; }
-    .site-alias {
+    .hiw-step h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .hiw-step p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.55;
+    }
+
+    /* ─── Demos Section ─── */
+    .demos-section {
+      padding: 80px 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .section-header .eyebrow {
+      display: inline-block;
+      background: var(--forest);
+      color: var(--gold);
+      padding: 5px 16px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .section-header p {
+      color: var(--text-light);
+      font-size: 1rem;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    .demos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .demo-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .demo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .demo-preview {
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+    .demo-preview .preview-label {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+    .demo-preview-pages {
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+      display: flex;
+      gap: 6px;
+      z-index: 2;
+    }
+    .demo-preview-pages span {
+      background: rgba(0,0,0,0.55);
+      color: white;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    /* Preview thumbnails — colored bars simulating content */
+    .preview-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Each site has a unique preview gradient */
+    .demo-card.plumber .demo-preview { background: linear-gradient(160deg, #1e3a5f 0%, #2d527a 60%, #3a6491 100%); }
+    .demo-card.plumber .preview-bar { background: linear-gradient(to top, #1e3a5f, transparent); }
+
+    .demo-card.electrician .demo-preview { background: linear-gradient(160deg, #1a2e4a 0%, #2a3f6f 60%, #3a507a 100%); }
+    .demo-card.electrician .preview-bar { background: linear-gradient(to top, #1a2e4a, transparent); }
+
+    .demo-card.pizzashop .demo-preview { background: linear-gradient(160deg, #c4421a 0%, #e06030 60%, #e8722a 100%); }
+    .demo-card.pizzashop .preview-bar { background: linear-gradient(to top, #c4421a, transparent); }
+
+    .demo-card.copperkettle .demo-preview { background: linear-gradient(160deg, #1c3a2f 0%, #2d5a47 60%, #6b8f71 100%); }
+    .demo-card.copperkettle .preview-bar { background: linear-gradient(to top, #1c3a2f, transparent); }
+
+    .demo-card.church .demo-preview { background: linear-gradient(160deg, #1c2d4f 0%, #2a3f6f 60%, #3a5078 100%); }
+    .demo-card.church .preview-bar { background: linear-gradient(to top, #1c2d4f, transparent); }
+
+    .demo-body {
+      padding: 24px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .demo-type {
+      display: inline-block;
       font-size: 0.7rem;
       font-weight: 700;
-      text-transform: uppercase;
       letter-spacing: 1px;
-      color: #999;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      align-self: flex-start;
+    }
+    .demo-card.plumber .demo-type { background: #e8f0f8; color: #1e3a5f; }
+    .demo-card.electrician .demo-type { background: #e8f0f5; color: #1a2e4a; }
+    .demo-card.pizzashop .demo-type { background: #fde8e0; color: #c4421a; }
+    .demo-card.copperkettle .demo-type { background: #e8f0e8; color: #1c3a2f; }
+    .demo-card.church .demo-type { background: #e8ecf5; color: #1c2d4f; }
+
+    .demo-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--navy);
       margin-bottom: 4px;
     }
-    .site-name { font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; color: #1e3a5f; }
-    .site-tagline { font-size: 0.9rem; color: #666; margin-bottom: 16px; }
-    .site-type {
-      display: inline-block;
-      background: #f0f4f8;
-      color: #1e3a5f;
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 4px 12px;
-      border-radius: 20px;
+    .demo-tagline {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .demo-pages {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
       margin-bottom: 16px;
     }
-    .site-links { display: flex; gap: 12px; flex-wrap: wrap; }
-    .site-link {
-      padding: 10px 20px;
-      border-radius: 8px;
+    .demo-pages span {
+      background: var(--bg);
+      color: var(--text-light);
+      font-size: 0.72rem;
       font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
+      padding: 3px 9px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    .demo-links {
+      margin-top: auto;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .demo-link {
+      padding: 9px 18px;
+      border-radius: 7px;
+      font-weight: 600;
+      font-size: 0.82rem;
       transition: all 0.2s;
     }
-    .site-link.primary {
-      background: #e8722a;
-      color: #fff;
+    .demo-link.primary {
+      background: var(--forest);
+      color: var(--white);
     }
-    .site-link.primary:hover { background: #d4621f; }
-    .site-link.secondary {
-      background: #f0f4f8;
-      color: #1e3a5f;
+    .demo-link.primary:hover {
+      background: var(--green);
+      transform: translateY(-1px);
+      opacity: 1;
     }
-    .site-link.secondary:hover { background: #e0e8f0; }
-    .site-dir {
-      font-size: 0.8rem;
-      color: #aaa;
-      margin-top: 16px;
-      font-family: monospace;
+    .demo-link.secondary {
+      background: var(--bg);
+      color: var(--navy);
+      border: 1px solid var(--border);
     }
-    .footer { text-align: center; padding: 40px 24px; color: #999; font-size: 0.85rem; }
-    .footer a { color: #1e3a5f; text-decoration: none; }
-    @media (max-width: 640px) {
-      .site-card { flex-direction: column; }
-      .site-thumb { width: 100%; height: 160px; }
+    .demo-link.secondary:hover {
+      background: var(--border);
+      transform: translateY(-1px);
+      opacity: 1;
+    }
+
+    /* ─── CTA Section ─── */
+    .cta-section {
+      background: var(--forest);
+      padding: 80px 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 60%);
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .cta-section h2 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201,168,76,0.35);
+      opacity: 1;
+    }
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.5);
+      transform: translateY(-2px);
+      opacity: 1;
+    }
+
+    /* ─── Footer ─── */
+    .site-footer {
+      background: #111827;
+      padding: 40px 28px;
+      text-align: center;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.85rem;
+    }
+    .site-footer a {
+      color: var(--gold);
+    }
+    .site-footer a:hover {
+      opacity: 0.8;
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      .demos-grid {
+        grid-template-columns: 1fr;
+      }
+      .hiw-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .hero-btns {
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+      }
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      .cta-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="page-header">
-      <span class="badge">Gentoolink Demo Sites</span>
-      <h1>Client Portfolio Samples</h1>
-      <p>Click any site to preview it, then use the directory name to request changes.</p>
-    </div>
 
-    <div class="sites-grid">
-
-      <!-- Plumber -->
-      <div class="site-card plumber">
-        <div class="site-thumb">🚰</div>
-        <div class="site-info">
-          <div class="site-alias">Alias: plumber</div>
-          <div class="site-name">Precision Plumbing & Drains</div>
-          <div class="site-tagline">"We fix it right. The first time."</div>
-          <div class="site-type">Local Service Business</div>
-          <div class="site-links">
-            <a href="plumber/" class="site-link primary">Preview Site →</a>
-          </div>
-          <div class="site-dir">Directory: demo-sites/plumber/</div>
-        </div>
-      </div>
-
-      <!-- Electrician -->
-      <div class="site-card electrician">
-        <div class="site-thumb">⚡</div>
-        <div class="site-info">
-          <div class="site-alias">Alias: electrician</div>
-          <div class="site-name">Current Electric & Security</div>
-          <div class="site-tagline">"Power done safe. Work done right."</div>
-          <div class="site-type">Licensed Trade Business</div>
-          <div class="site-links">
-            <a href="electrician/" class="site-link primary">Preview Site →</a>
-          </div>
-          <div class="site-dir">Directory: demo-sites/electrician/</div>
-        </div>
-      </div>
-
-      <!-- Pizza Shop -->
-      <div class="site-card pizzashop">
-        <div class="site-thumb">🍕</div>
-        <div class="site-info">
-          <div class="site-alias">Alias: pizzashop</div>
-          <div class="site-name">Mama Rosa's Woodfire Pizza</div>
-          <div class="site-tagline">"Hand-stretched. Oak-fired. Made with love."</div>
-          <div class="site-type">Food & Hospitality Business</div>
-          <div class="site-links">
-            <a href="pizzashop/" class="site-link primary">Preview Site →</a>
-          </div>
-          <div class="site-dir">Directory: demo-sites/pizzashop/</div>
-        </div>
-      </div>
-
-      <!-- Copper Kettle -->
-      <div class="site-card copperkettle">
-        <div class="site-thumb">🍽️</div>
-        <div class="site-info">
-          <div class="site-alias">Alias: copperkettle</div>
-          <div class="site-name">The Copper Kettle</div>
-          <div class="site-tagline">"Farm-to-Table Dining in Vanderhoof"</div>
-          <div class="site-type">Restaurant</div>
-          <div class="site-links">
-            <a href="copper-kettle/" class="site-link primary">Preview Site →</a>
-            <a href="https://gentoolink.github.io/copper-kettle-demo/" class="site-link secondary" target="_blank">Live Site ↗</a>
-          </div>
-          <div class="site-dir">Directory: demo-sites/copper-kettle/</div>
-        </div>
-      </div>
-
-      <!-- Church -->
-      <div class="site-card church">
-        <div class="site-thumb">⛪</div>
-        <div class="site-info">
-          <div class="site-alias">Alias: church</div>
-          <div class="site-name">Vanderhoof Christian Church</div>
-          <div class="site-tagline">"A Place to Belong, a Place to Believe"</div>
-          <div class="site-type">Faith Community</div>
-          <div class="site-links">
-            <a href="church/" class="site-link primary">Preview Site →</a>
-          </div>
-          <div class="site-dir">Directory: demo-sites/church/</div>
-        </div>
-      </div>
-
-    </div>
+  <div class="top-banner">
+    <strong>Gentoolink Web Services</strong> — Your website, updated by text message. No dashboard. No drag-and-drop.
   </div>
 
-  <div class="footer">
-    <p>Gentoolink Web Services — <a href="https://gentoolinkwebservices.com">gentoolinkwebservices.com</a></p>
-    <p style="margin-top:8px">Repo: <a href="https://github.com/gentoolink/gentoolink-demo-sites">github.com/gentoolink/gentoolink-demo-sites</a></p>
-  </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">Gentoolink<span>.</span></div>
+      <a href="mailto:ken@gentoolinkwebservices.com" class="header-cta">Get Your Site</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Demo Portfolio</div>
+      <h1>See What Your Business<br>Could Look Like <em>Online</em></h1>
+      <p>Purpose-built websites for local businesses in Vanderhoof, Prince George, and across BC. And the AI agent that keeps them fresh — without you touching a thing.</p>
+      <div class="hero-pitch">
+        <span class="icon">💬</span>
+        <span>You text a change. <strong>Your website updates in seconds.</strong> That's the Gentoolink difference.</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#demos" class="btn btn-primary">See the Demos</a>
+        <a href="mailto:ken@gentoolinkwebservices.com" class="btn btn-secondary">ken@gentoolinkwebservices.com</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <div class="hiw-inner">
+      <div class="hiw-step">
+        <div class="num">1</div>
+        <h3>Pick a design</h3>
+        <p>Choose from one of our industry-specific templates — restaurant, church, trades, hospitality, and more.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="num">2</div>
+        <h3>Text your content</h3>
+        <p>You text updates to our AI agent. "Add the Tuesday special" or "change our Saturday hours."</p>
+      </div>
+      <div class="hiw-step">
+        <div class="num">3</div>
+        <h3>Site rebuilds itself</h3>
+        <p>Our AI agent updates the content and your site rebuilds automatically. No logins, no dashboards.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="demos-section" id="demos">
+    <div class="section-header">
+      <div class="eyebrow">Live Demos</div>
+      <h2>Click. Preview. Request Your Own.</h2>
+      <p>Every site below is a real Gentoolink demo. Click to preview the full design, then contact us to get one built for your business.</p>
+    </div>
+
+    <div class="demos-grid">
+
+      <!-- Copper Kettle — Restaurant -->
+      <div class="demo-card copperkettle">
+        <div class="demo-preview">
+          <span class="preview-label">⭐ Featured</span>
+          <div class="preview-bar"></div>
+        </div>
+        <div class="demo-body">
+          <span class="demo-type">Restaurant · Farm-to-Table</span>
+          <div class="demo-name">The Copper Kettle</div>
+          <div class="demo-tagline">"Farm-to-Table Dining in Vanderhoof" — Pacific Northwest aesthetic with forest greens and cedar tones.</div>
+          <div class="demo-pages">
+            <span>Home</span>
+            <span>Menu</span>
+            <span>Specials</span>
+            <span>Hours</span>
+          </div>
+          <div class="demo-links">
+            <a href="copper-kettle/" class="demo-link primary">Preview Site →</a>
+            <a href="mailto:ken@gentoolinkwebservices.com?subject=The Copper Kettle — Restaurant Site" class="demo-link secondary">Get This Look</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vanderhoof Christian Church -->
+      <div class="demo-card church">
+        <div class="demo-preview">
+          <span class="preview-label">New</span>
+          <div class="preview-bar"></div>
+        </div>
+        <div class="demo-body">
+          <span class="demo-type">Faith Community</span>
+          <div class="demo-name">Vanderhoof Christian Church</div>
+          <div class="demo-tagline">"A Place to Belong, a Place to Believe" — warm navy and gold design. Service times, events, contact form.</div>
+          <div class="demo-pages">
+            <span>Home</span>
+            <span>Services</span>
+            <span>Events</span>
+            <span>Contact</span>
+          </div>
+          <div class="demo-links">
+            <a href="church/" class="demo-link primary">Preview Site →</a>
+            <a href="mailto:ken@gentoolinkwebservices.com?subject=Vanderhoof Christian Church — Church Site" class="demo-link secondary">Get This Look</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mama Rosa's Pizza -->
+      <div class="demo-card pizzashop">
+        <div class="demo-preview">
+          <div class="preview-bar"></div>
+        </div>
+        <div class="demo-body">
+          <span class="demo-type">Restaurant · Pizza</span>
+          <div class="demo-name">Mama Rosa's Woodfire Pizza</div>
+          <div class="demo-tagline">"Hand-stretched. Oak-fired. Made with love." — auto-cycling featured pizzas, full menu, order form.</div>
+          <div class="demo-pages">
+            <span>Home</span>
+            <span>Menu</span>
+            <span>Order</span>
+          </div>
+          <div class="demo-links">
+            <a href="pizzashop/" class="demo-link primary">Preview Site →</a>
+            <a href="mailto:ken@gentoolinkwebservices.com?subject=Mama Rosa's Pizza — Food Site" class="demo-link secondary">Get This Look</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Precision Plumbing -->
+      <div class="demo-card plumber">
+        <div class="demo-preview">
+          <div class="preview-bar"></div>
+        </div>
+        <div class="demo-body">
+          <span class="demo-type">Trades · Plumbing</span>
+          <div class="demo-name">Precision Plumbing & Drains</div>
+          <div class="demo-tagline">"We fix it right. The first time." — service cards, trust bar, contact form, floating call button.</div>
+          <div class="demo-pages">
+            <span>Home</span>
+            <span>Services</span>
+            <span>Contact</span>
+          </div>
+          <div class="demo-links">
+            <a href="plumber/" class="demo-link primary">Preview Site →</a>
+            <a href="mailto:ken@gentoolinkwebservices.com?subject=Precision Plumbing — Trades Site" class="demo-link secondary">Get This Look</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Current Electric -->
+      <div class="demo-card electrician">
+        <div class="demo-preview">
+          <div class="preview-bar"></div>
+        </div>
+        <div class="demo-body">
+          <span class="demo-type">Trades · Electrical</span>
+          <div class="demo-name">Current Electric & Security</div>
+          <div class="demo-tagline">"Power done safe. Work done right." — panel upgrades, EV charging, security, free estimate form.</div>
+          <div class="demo-pages">
+            <span>Home</span>
+            <span>Services</span>
+            <span>Contact</span>
+          </div>
+          <div class="demo-links">
+            <a href="electrician/" class="demo-link primary">Preview Site →</a>
+            <a href="mailto:ken@gentoolinkwebservices.com?subject=Current Electric — Trades Site" class="demo-link secondary">Get This Look</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Request New Demo CTA -->
+      <div class="demo-card" style="background: var(--forest); justify-content: center; align-items: center; text-align: center; padding: 40px;">
+        <div>
+          <div style="font-size: 2.5rem; margin-bottom: 16px;">🏗️</div>
+          <div style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--white); margin-bottom: 10px;">Don't See Your Industry?</div>
+          <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.65; margin-bottom: 24px; max-width: 280px; margin-left: auto; margin-right: auto;">Auto repair, dentist, salon, landscaper — we can build it. Just ask.</p>
+          <a href="mailto:ken@gentoolinkwebservices.com?subject=New Demo Request" class="btn btn-gold" style="font-size: 0.88rem; padding: 11px 24px;">Ask for a Demo →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>Your Website. Updated by Text.</h2>
+      <p>Most small business websites go stale in a week. Ours updates in seconds — just text us. No dashboard, no drag-and-drop, no waiting on a web developer.</p>
+      <div class="cta-buttons">
+        <a href="mailto:ken@gentoolinkwebservices.com" class="btn btn-gold">📧 Email ken@gentoolinkwebservices.com</a>
+        <a href="tel:+16042187290" class="btn btn-outline-white">📞 Call 604-218-7290</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>Gentoolink Web Services · <a href="https://gentoolinkwebservices.com">gentoolinkwebservices.com</a></p>
+    <p style="margin-top:8px">Vanderhoof · Prince George · Fort St. James · Quesnel · Burns Lake</p>
+    <p style="margin-top:8px">© 2026 Gentoolink Web Services. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
