@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Cozy Corner Pizzeria</title>
+  <meta name="description" content="Full menu for Cozy Corner Pizzeria, Vanderhoof. Specialty pizzas, wraps, pasta, wings, and more.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .menu-hero {
+      background: linear-gradient(135deg, #c4421a, #e8722a);
+      color: #fff;
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .menu-hero h1 { font-size: clamp(2rem, 5vw, 3rem); color: #fff; margin-bottom: 10px; }
+    .menu-hero p { color: rgba(255,255,255,0.8); }
+    .menu-cats {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 24px;
+      background: var(--bg-warm);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 60px;
+      z-index: 50;
+    }
+    .cat-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 7px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .cat-btn:hover, .cat-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    .menu-section { padding: 0; }
+    .menu-group { padding: 48px 0; border-bottom: 1px solid var(--border); }
+    .menu-group:last-child { border-bottom: none; }
+    .menu-group h2 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 40px;
+    }
+    .menu-item { padding: 14px 0; border-bottom: 1px solid var(--border); }
+    .menu-item:last-child { border-bottom: none; }
+    .menu-item-header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 3px; }
+    .menu-item-name { font-weight: 700; font-size: 0.95rem; color: var(--text); }
+    .menu-item-price { font-weight: 700; font-size: 0.9rem; color: var(--primary); white-space: nowrap; }
+    .menu-item-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+    .menu-sizes { font-size: 0.78rem; color: var(--text-subtle); margin-top: 2px; }
+    .menu-note { font-size: 0.78rem; color: var(--text-subtle); font-style: italic; margin-top: 2px; }
+    @media (max-width: 600px) {
+      .menu-grid { grid-template-columns: 1fr; }
+      .menu-cats { top: 56px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">🍕</span>
+      <span class="logo-text">Cozy Corner<span>Pizzeria</span></span>
+    </a>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-menu">
+      <a href="menu.html">Menu</a>
+      <a href="specials.html">Specials</a>
+      <a href="contact.html">Contact</a>
+      <a href="tel:+12505676678" class="nav-phone">📞 (250) 567-6678</a>
+    </div>
+  </div>
+</nav>
+
+<div class="menu-hero">
+  <h1>Our Menu</h1>
+  <p>Fresh. Made to order. Worth coming back for.</p>
+</div>
+
+<!-- Category nav -->
+<div class="menu-cats">
+  <button class="cat-btn active" onclick="scrollToCat('starters')">🍟 Starters</button>
+  <button class="cat-btn" onclick="scrollToCat('salads')">🥗 Salads</button>
+  <button class="cat-btn" onclick="scrollToCat('wraps')">🌯 Wraps</button>
+  <button class="cat-btn" onclick="scrollToCat('pizza')">🍕 Pizza</button>
+  <button class="cat-btn" onclick="scrollToCat('pasta')">🍝 Pasta</button>
+  <button class="cat-btn" onclick="scrollToCat('mexican')">🌮 Mexican</button>
+  <button class="cat-btn" onclick="scrollToCat('desserts')">🍰 Desserts</button>
+  <button class="cat-btn" onclick="scrollToCat('drinks')">🥤 Drinks</button>
+</div>
+
+<main class="menu-section">
+  <div class="container">
+
+    <!-- Starters -->
+    <div class="menu-group" id="starters">
+      <h2>🍟 Starters</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Cheezie Garlic Bread</div>
+            <div class="menu-item-price">$8.95</div>
+          </div>
+          <div class="menu-item-desc">Oven-baked breadsticks brushed with garlic butter, topped with melted mozzarella. Served with marinara.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Cheezie Garlic Bread Bruschetta</div>
+            <div class="menu-item-price">$10.95</div>
+          </div>
+          <div class="menu-item-desc">Warm, aromatic bruschetta with melted cheese and bright tomato topping. Comforting yet fresh.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Mozza Sticks</div>
+            <div class="menu-item-price">$9.95</div>
+          </div>
+          <div class="menu-item-desc">6 golden fried mozzarella sticks with fancy sauce for dipping.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Thai Chili Chicken Bites</div>
+            <div class="menu-item-price">$13.95</div>
+          </div>
+          <div class="menu-item-desc">Crisp, tender pieces coated in a sweet-spicy Thai chili glaze. A lively crowd-pleaser.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Spicy Buffalo Shrimp</div>
+            <div class="menu-item-price">$14.95</div>
+          </div>
+          <div class="menu-item-desc">Lightly breaded shrimp tossed in bold Buffalo heat, balanced by a cool creamy Greek dip.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Tomato Cream Soup</div>
+            <div class="menu-item-price">$7.95</div>
+          </div>
+          <div class="menu-item-desc">Warm, velvety tomato soup — a cozy starter on a cold day.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Salads -->
+    <div class="menu-group" id="salads">
+      <h2>🥗 Salads</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Caesar Salad</div>
+            <div class="menu-item-price">$9.95</div>
+          </div>
+          <div class="menu-item-desc">Crisp romaine, rich Caesar dressing, shaved parmesan, and crunchy croutons. Confidently done.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Garden Salad</div>
+            <div class="menu-item-price">$8.95</div>
+          </div>
+          <div class="menu-item-desc">Mixed greens, tomato, cucumber, onion, and feta with house vinaigrette.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wraps & Sandwiches -->
+    <div class="menu-group" id="wraps">
+      <h2>🌯 Wraps & Sandwiches</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Caesar Wrap</div>
+            <div class="menu-item-price">$12.95</div>
+          </div>
+          <div class="menu-item-desc">All the bold flavours of a Caesar salad — wrapped and portable.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Thai Chili Chicken Wrap</div>
+            <div class="menu-item-price">$13.95</div>
+          </div>
+          <div class="menu-item-desc">Sweet, spicy Thai chili chicken with crisp veggies in a soft tortilla.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Donair</div>
+            <div class="menu-item-price">$12.95</div>
+          </div>
+          <div class="menu-item-desc">Seasoned donair meat, tzatziki, lettuce, tomato in a warm pita. Add for $1.50.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Beef Dip</div>
+            <div class="menu-item-price">$13.95</div>
+          </div>
+          <div class="menu-item-desc">Slow-roasted beef, melty provolone, horseradish aioli, caramelized onions on a toasted bun. Served with jus.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pizza -->
+    <div class="menu-group" id="pizza">
+      <h2>🍕 Specialty Pizzas</h2>
+      <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px;">Our pizzas are made fresh to order in our brick oven. Prices below are for medium (12") — large (16") available.</p>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Meat Lovers</div>
+            <div class="menu-item-price">M $23.95 · L $28.95</div>
+          </div>
+          <div class="menu-item-desc">Pepperoni, ham, bacon, sausage — for those who like it fully loaded.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Bacon Double Cheese</div>
+            <div class="menu-item-price">M $23.95 · L $28.95</div>
+          </div>
+          <div class="menu-item-desc">Extra bacon, double mozzarella and cheddar. Rich and satisfying.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">New York Deli</div>
+            <div class="menu-item-price">M $23.95 · L $28.95</div>
+          </div>
+          <div class="menu-item-desc">Pastrami, pickles, mustard, mozzarella — like a deli sandwich, on a pizza.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Italian</div>
+            <div class="menu-item-price">M $23.95 · L $28.95</div>
+          </div>
+          <div class="menu-item-desc">Soppressata, roasted peppers, olives, fresh basil, mozzarella.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Greek</div>
+            <div class="menu-item-price">M $23.95 · L $28.95</div>
+          </div>
+          <div class="menu-item-desc">Feta, kalamata olives, roasted garlic, sun-dried tomato, spinach, mozzarella.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Pesto Chicken</div>
+            <div class="menu-item-price">M $24.95 · L $29.95</div>
+          </div>
+          <div class="menu-item-desc">Basil pesto, grilled chicken, roasted red peppers, parmesan, mozzarella.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Thai Chili Chicken</div>
+            <div class="menu-item-price">M $24.95 · L $29.95</div>
+          </div>
+          <div class="menu-item-desc">Thai chili glazed chicken, peppers, green onion, mozzarella. Sweet-heat lovers, this one's for you.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Chicken Alfredo</div>
+            <div class="menu-item-price">M $24.95 · L $29.95</div>
+          </div>
+          <div class="menu-item-desc">Creamy alfredo sauce, grilled chicken, bacon, broccoli, mozzarella.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Spicy Buffalo Chicken</div>
+            <div class="menu-item-price">M $24.95 · L $29.95</div>
+          </div>
+          <div class="menu-item-desc">Buffalo sauce, grilled chicken, pepperoncini, blue cheese crumble, mozzarella.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">BBQ Chicken</div>
+            <div class="menu-item-price">M $23.95 · L $28.95</div>
+          </div>
+          <div class="menu-item-desc">BBQ sauce, grilled chicken, red onion, cilantro, smoked gouda, mozzarella.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Donair Pizza</div>
+            <div class="menu-item-price">M $24.95 · L $29.95</div>
+          </div>
+          <div class="menu-item-desc">Donair meat, onion, tomato, mozzarella, drizzled with sweet donair sauce.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Caribbean Special</div>
+            <div class="menu-item-price">M $24.95 · L $29.95</div>
+          </div>
+          <div class="menu-item-desc">Jerk-seasoned chicken, pineapple, roasted peppers, coconut-mango drizzle, mozzarella.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Phil's Favourite</div>
+            <div class="menu-item-price">M $25.95 · L $30.95</div>
+          </div>
+          <div class="menu-item-desc">The owner's personal pick. Seasonally inspired — ask your server what's on it this week.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Primo Vegetarian</div>
+            <div class="menu-item-price">M $22.95 · L $27.95</div>
+          </div>
+          <div class="menu-item-desc">Fresh mushrooms, peppers, onion, tomato, kalamata olives, feta, mozzarella.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Vegetarian</div>
+            <div class="menu-item-price">M $21.95 · L $26.95</div>
+          </div>
+          <div class="menu-item-desc">Mushrooms, peppers, onion, olives, tomato — a reliable classic.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Cheese Lovers</div>
+            <div class="menu-item-price">M $21.95 · L $26.95</div>
+          </div>
+          <div class="menu-item-desc">Mozzarella, cheddar, parmesan, feta, ricotta — four cheeses, one pizza.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Hawaiian</div>
+            <div class="menu-item-price">M $21.95 · L $26.95</div>
+          </div>
+          <div class="menu-item-desc">Ham, pineapple, mozzarella. Simple, classic, and never lets you down.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Taco Pizza</div>
+            <div class="menu-item-price">M $23.95 · L $28.95</div>
+          </div>
+          <div class="menu-item-desc">Seasoned beef, lettuce, tomato, cheddar, taco sauce. A Vanderhoof original that keeps people coming back.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Mama Rosa Classic</div>
+            <div class="menu-item-price">M $20.95 · L $25.95</div>
+          </div>
+          <div class="menu-item-desc">San Marzano tomato sauce, fresh mozzarella, basil, extra virgin olive oil. The OG.</div>
+        </div>
+      </div>
+      <div style="margin-top:20px; padding:16px; background:var(--bg-warm); border-radius:10px;">
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:8px;"><strong>Make it vegan:</strong> any pizza available cheeseless — just ask.</p>
+        <p style="font-size:0.85rem; color:var(--text-muted);"><strong>Build your own:</strong> Start with cheese and tomato base — add any toppings you like for $2–$3 each.</p>
+      </div>
+    </div>
+
+    <!-- Pasta -->
+    <div class="menu-group" id="pasta">
+      <h2>🍝 Pasta</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Baked Lasagna</div>
+            <div class="menu-item-price">$15.95</div>
+          </div>
+          <div class="menu-item-desc">Layers of pasta, rich meat sauce, bechamel, and melted mozzarella. Baked until golden.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Baked Spaghetti</div>
+            <div class="menu-item-price">$14.95</div>
+          </div>
+          <div class="menu-item-desc">Classic spaghetti and meat sauce, baked under a blanket of mozzarella.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Beef Ravioli</div>
+            <div class="menu-item-price">$17.95</div>
+          </div>
+          <div class="menu-item-desc">Beef-filled ravioli in a rich tomato cream sauce. Comforting and filling.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">4 Cheese Ravioli</div>
+            <div class="menu-item-price">$16.95</div>
+          </div>
+          <div class="menu-item-desc">Ricotta, mozzarella, parmesan, and feta in a sage butter sauce.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Baked Chicken Alfredo</div>
+            <div class="menu-item-price">$17.95</div>
+          </div>
+          <div class="menu-item-desc">Fettuccine alfredo with grilled chicken, baked until bubbly and golden.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mexican -->
+    <div class="menu-group" id="mexican">
+      <h2>🌮 Mexican</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Quesadilla</div>
+            <div class="menu-item-price">$13.95</div>
+          </div>
+          <div class="menu-item-desc">Grilled flour tortilla stuffed with cheese, peppers, onion, and your choice of chicken or beef.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Mucho Grande Soft Taco</div>
+            <div class="menu-item-price">$14.95</div>
+          </div>
+          <div class="menu-item-desc">Two oversized soft tacos with seasoned beef, lettuce, cheese, tomato, sour cream, and salsa.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Chicken Enchiladas</div>
+            <div class="menu-item-price">$18.95</div>
+          </div>
+          <div class="menu-item-desc">Three corn tortillas filled with chicken, smothered in red enchilada sauce, topped with cheese and sour cream.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desserts -->
+    <div class="menu-group" id="desserts">
+      <h2>🍰 Desserts</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Brownies</div>
+            <div class="menu-item-price">$6.95</div>
+          </div>
+          <div class="menu-item-desc">Rich, fudgy brownies baked fresh. Ask about the current flavour.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Cheesecake</div>
+            <div class="menu-item-price">$7.95</div>
+          </div>
+          <div class="menu-item-desc">Creamy New York-style cheesecake with a graham crumb crust. Simple and satisfying.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Caramel Apple Pie</div>
+            <div class="menu-item-price">$7.95</div>
+          </div>
+          <div class="menu-item-desc">Warm apple pie with a flaky crust and drizzled caramel sauce.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drinks -->
+    <div class="menu-group" id="drinks">
+      <h2>🥤 Drinks</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Soft Drinks</div>
+            <div class="menu-item-price">$2.95</div>
+          </div>
+          <div class="menu-item-desc">Coca-Cola, Sprite, Root Beer, Iced Tea. Or bring your own 2L — pay only tax (dine-in).</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Italian Soda</div>
+            <div class="menu-item-price">$3.95</div>
+          </div>
+          <div class="menu-item-desc">Blood orange or raspberry — sparkling, refreshing, and a little unexpected.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Coffee</div>
+            <div class="menu-item-price">$2.50</div>
+          </div>
+          <div class="menu-item-desc">Freshly brewed. Ask for a refill.</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-header">
+            <div class="menu-item-name">Juice</div>
+            <div class="menu-item-price">$2.95</div>
+          </div>
+          <div class="menu-item-desc">Orange, apple, or cranberry.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <span class="logo-icon">🍕</span>
+      <span>Cozy Corner <span>Pizzeria</span></span>
+    </div>
+    <p class="footer-address">2417 Burrard Ave · Vanderhoof, BC · (250) 567-6678</p>
+    <p class="footer-copy">© 2024 Cozy Corner Pizzeria. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  function scrollToCat(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 110;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+    // Update active button
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+</script>
+</body>
+</html>
