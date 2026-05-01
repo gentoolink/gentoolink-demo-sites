@@ -378,6 +378,22 @@
     .demo-card.church .demo-preview { background: linear-gradient(160deg, #1c2d4f 0%, #2a3f6f 60%, #3a5078 100%); }
     .demo-card.church .preview-bar { background: linear-gradient(to top, #1c2d4f, transparent); }
 
+    .demo-card.auto-repair .demo-preview { background: linear-gradient(160deg, #1e3a5f 0%, #2d4a6a 60%, #3d5a7a 100%); }
+    .demo-card.auto-repair .preview-bar { background: linear-gradient(to top, #1e3a5f, transparent); }
+    .demo-card.dentist .demo-preview { background: linear-gradient(160deg, #0d7377 0%, #1a8a8e 60%, #2a9fa2 100%); }
+    .demo-card.dentist .preview-bar { background: linear-gradient(to top, #0d7377, transparent); }
+    .demo-card.salon .demo-preview { background: linear-gradient(160deg, #2d2d2d 0%, #4a3a3a 60%, #6b5050 100%); }
+    .demo-card.salon .preview-bar { background: linear-gradient(to top, #2d2d2d, transparent); }
+    .demo-card.landscaper .demo-preview { background: linear-gradient(160deg, #2d5a3d 0%, #3d7a52 60%, #4d9a68 100%); }
+    .demo-card.landscaper .preview-bar { background: linear-gradient(to top, #2d5a3d, transparent); }
+
+    .demo-card.church .demo-type { background: #e8ecf5; color: #1c2d4f; }
+
+    .demo-card.auto-repair .demo-type { background: #e8eef5; color: #1e3a5f; }
+    .demo-card.dentist .demo-type { background: #e5f5f5; color: #0d7377; }
+    .demo-card.salon .demo-type { background: #f5e8e8; color: #6b5050; }
+    .demo-card.landscaper .demo-type { background: #e8f0e5; color: #2d5a3d; }
+
     .demo-body {
       padding: 24px 28px;
       flex: 1;
@@ -399,7 +415,6 @@
     .demo-card.electrician .demo-type { background: #e8f0f5; color: #1a2e4a; }
     .demo-card.pizzashop .demo-type { background: #fde8e0; color: #c4421a; }
     .demo-card.copperkettle .demo-type { background: #e8f0e8; color: #1c3a2f; }
-    .demo-card.church .demo-type { background: #e8ecf5; color: #1c2d4f; }
 
     .demo-name {
       font-family: var(--font-display);
@@ -735,12 +750,100 @@
         </div>
       </div>
 
+      <!-- Auto Repair -->
+      <div class="demo-card auto-repair">
+        <div class="demo-preview" style="background: linear-gradient(160deg, #1e3a5f 0%, #2d4a6a 60%, #3d5a7a 100%);">
+          <div class="preview-bar"></div>
+        </div>
+        <div class="demo-body">
+          <span class="demo-type">Automotive · Service</span>
+          <div class="demo-name">Vanderhoof Auto Care</div>
+          <div class="demo-tagline">"Your Vehicle. Our Expertise." — full-service mechanic, 18 years in Vanderhoof. Trust bar, 6 services, coupon section.</div>
+          <div class="demo-pages">
+            <span>Home</span>
+            <span>Services</span>
+            <span>Coupons</span>
+            <span>Contact</span>
+          </div>
+          <div class="demo-links">
+            <a href="auto-repair/" class="demo-link primary">Preview Site →</a>
+            <a href="mailto:ken@gentoolinkwebservices.com?subject=Vanderhoof Auto Care — Auto Repair Site" class="demo-link secondary">Get This Look</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dentist -->
+      <div class="demo-card dentist">
+        <div class="demo-preview" style="background: linear-gradient(160deg, #0d7377 0%, #1a8a8e 60%, #2a9fa2 100%);">
+          <div class="preview-bar"></div>
+        </div>
+        <div class="demo-body">
+          <span class="demo-type">Medical · Dental</span>
+          <div class="demo-name">Vanderhoof Family Dental</div>
+          <div class="demo-tagline">"Your smile, our priority." — clean medical aesthetic. New patients welcome, walk-ins, emergency care.</div>
+          <div class="demo-pages">
+            <span>Home</span>
+            <span>Services</span>
+            <span>Team</span>
+            <span>Contact</span>
+          </div>
+          <div class="demo-links">
+            <a href="dentist/" class="demo-link primary">Preview Site →</a>
+            <a href="mailto:ken@gentoolinkwebservices.com?subject=Vanderhoof Family Dental — Dental Site" class="demo-link secondary">Get This Look</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Salon -->
+      <div class="demo-card salon">
+        <div class="demo-preview" style="background: linear-gradient(160deg, #2d2d2d 0%, #4a3a3a 60%, #6b5050 100%);">
+          <div class="preview-bar"></div>
+        </div>
+        <div class="demo-body">
+          <span class="demo-type">Beauty · Salon</span>
+          <div class="demo-name">The Velvet Chair Salon</div>
+          <div class="demo-tagline">"Where style meets community." — cuts, color, styling, treatments. Warm rose and charcoal aesthetic.</div>
+          <div class="demo-pages">
+            <span>Home</span>
+            <span>Services</span>
+            <span>Gallery</span>
+            <span>Contact</span>
+          </div>
+          <div class="demo-links">
+            <a href="salon/" class="demo-link primary">Preview Site →</a>
+            <a href="mailto:ken@gentoolinkwebservices.com?subject=The Velvet Chair — Salon Site" class="demo-link secondary">Get This Look</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Landscaper -->
+      <div class="demo-card landscaper">
+        <div class="demo-preview" style="background: linear-gradient(160deg, #2d5a3d 0%, #3d7a52 60%, #4d9a68 100%);">
+          <div class="preview-bar"></div>
+        </div>
+        <div class="demo-body">
+          <span class="demo-type">Home Services · Landscaping</span>
+          <div class="demo-name">Northern Terrain Landscaping</div>
+          <div class="demo-tagline">"Designing outdoor spaces in the North." — lawn care, landscaping, hardscaping, irrigation, snow removal.</div>
+          <div class="demo-pages">
+            <span>Home</span>
+            <span>Services</span>
+            <span>Gallery</span>
+            <span>Contact</span>
+          </div>
+          <div class="demo-links">
+            <a href="landscaper/" class="demo-link primary">Preview Site →</a>
+            <a href="mailto:ken@gentoolinkwebservices.com?subject=Northern Terrain — Landscaper Site" class="demo-link secondary">Get This Look</a>
+          </div>
+        </div>
+      </div>
+
       <!-- Request New Demo CTA -->
       <div class="demo-card" style="background: var(--forest); justify-content: center; align-items: center; text-align: center; padding: 40px;">
         <div>
           <div style="font-size: 2.5rem; margin-bottom: 16px;">🏗️</div>
           <div style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--white); margin-bottom: 10px;">Don't See Your Industry?</div>
-          <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.65; margin-bottom: 24px; max-width: 280px; margin-left: auto; margin-right: auto;">Auto repair, dentist, salon, landscaper — we can build it. Just ask.</p>
+          <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.65; margin-bottom: 24px; max-width: 280px; margin-left: auto; margin-right: auto;">We can build it — just ask. Auto repair, dentist, salon, landscaper already done.</p>
           <a href="mailto:ken@gentoolinkwebservices.com?subject=New Demo Request" class="btn btn-gold" style="font-size: 0.88rem; padding: 11px 24px;">Ask for a Demo →</a>
         </div>
       </div>
