@@ -4,33 +4,395 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Specials | The Copper Kettle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .specials-hero {
+      background: var(--forest);
+      padding: 72px 28px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .specials-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 100%, rgba(107, 143, 113, 0.2) 0%, transparent 60%);
+    }
+    .specials-hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .specials-hero .eyebrow {
+      display: inline-block;
+      background: rgba(139, 94, 60, 0.25);
+      border: 1px solid rgba(139, 94, 60, 0.4);
+      color: var(--cedar-light);
+      padding: 5px 18px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .specials-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 600;
+      color: var(--birch);
+      margin-bottom: 14px;
+    }
+    .specials-hero p {
+      color: var(--stone);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    .specials-layout {
+      padding: 72px 0 80px;
+    }
+
+    .featured-special {
+      background: var(--forest);
+      border-radius: 20px;
+      padding: 48px 52px;
+      margin-bottom: 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .featured-special::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(139, 94, 60, 0.2) 0%, transparent 60%);
+    }
+    .featured-special-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+    }
+    .featured-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cedar);
+      color: var(--birch);
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .featured-special h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 600;
+      color: var(--birch);
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+    .featured-special .desc {
+      font-size: 1rem;
+      color: var(--stone);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .featured-special .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: var(--moss);
+      font-weight: 500;
+    }
+    .featured-price {
+      text-align: center;
+    }
+    .featured-price .price {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--cedar-light);
+      line-height: 1;
+    }
+    .featured-price .label {
+      font-size: 0.72rem;
+      color: var(--stone);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 6px;
+    }
+
+    .specials-section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .specials-section-header .eyebrow {
+      display: inline-block;
+      background: var(--forest);
+      color: var(--birch);
+      padding: 5px 16px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .specials-section-header h2 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--forest);
+    }
+
+    .specials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .special-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .special-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(26, 58, 47, 0.12);
+    }
+    .special-card-image {
+      height: 140px;
+      background: linear-gradient(135deg, var(--forest-light), var(--moss));
+      position: relative;
+      overflow: hidden;
+    }
+    .special-card-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 5 L55 20 L55 40 L30 55 L5 40 L5 20 Z' fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='1'/%3E%3C/svg%3E");
+      background-size: 60px 60px;
+    }
+    .special-card-body {
+      padding: 22px 24px 26px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .special-day {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      align-self: flex-start;
+    }
+    .special-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .special-card .desc {
+      font-size: 0.87rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 14px;
+    }
+    .special-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+    .special-card .price {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--cedar);
+    }
+    .special-card .avail {
+      font-size: 0.75rem;
+      color: var(--moss);
+      font-weight: 500;
+    }
+
+    .availability-note {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-top: 48px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .availability-note .icon {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .availability-note h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 6px;
+    }
+    .availability-note p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 860px) {
+      .specials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .featured-special-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .featured-price {
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 24px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .specials-grid {
+        grid-template-columns: 1fr;
+      }
+      .featured-special {
+        padding: 36px 28px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">The Copper Kettle</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="specials.html">Specials</a></li>
-        <li><a href="hours.html">Hours</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">The Copper <span>Kettle</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html" class="active">Specials</a></li>
+          <li><a href="hours.html">Hours</a></li>
+        </ul>
+      </nav>
+      <a href="tel:2505678901" class="cta">Reserve</a>
+    </div>
   </header>
 
-  <main>
-    <h1>Tonight's Specials</h1>
-    <div id="specials-content">
-      <p>Loading...</p>
+  <section class="specials-hero">
+    <div class="specials-hero-inner">
+      <div class="eyebrow">Chef's Corner</div>
+      <h1>This Week's Specials</h1>
+      <p>Seasonal dishes crafted from what's fresh in the forest and at the farm. Available while supplies last.</p>
     </div>
-  </main>
+  </section>
 
-  <footer>
-    <p>&copy; 2026 The Copper Kettle. All rights reserved.</p>
+  <section class="specials-layout container">
+
+    <!-- Featured Special -->
+    <div class="featured-special">
+      <div class="featured-special-inner">
+        <div>
+          <div class="featured-badge">⭐ Tonight's Special</div>
+          <h2>Roasted Salmon with Lemon Butter</h2>
+          <p class="desc">Herb-crusted Pacific salmon, lemon-butter glaze, garlic mashed potatoes, seasonal vegetables. Wild-caught from BC waters.</p>
+          <div class="availability">📅 Available tonight — ask your server</div>
+        </div>
+        <div class="featured-price">
+          <div class="price">$22</div>
+          <div class="label">per person</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="specials-section-header">
+      <div class="eyebrow">Weekly Specials</div>
+      <h2>More to Explore</h2>
+    </div>
+
+    <div class="specials-grid">
+      <div class="special-card">
+        <div class="special-card-image"></div>
+        <div class="special-card-body">
+          <span class="special-day">Friday</span>
+          <h3>Fish & Chips</h3>
+          <p class="desc">Beer-battered Pacific cod, hand-cut fries, coleslaw, tartar sauce. A Vanderhoof Friday tradition.</p>
+          <div class="special-card-footer">
+            <span class="price">$22</span>
+            <span class="avail">Fridays only</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="special-card">
+        <div class="special-card-image"></div>
+        <div class="special-card-body">
+          <span class="special-day">Sunday</span>
+          <h3>Sunday Roast</h3>
+          <p class="desc">Slow-roasted prime rib, Yorkshire pudding, roast potatoes, seasonal vegetables, rich beef gravy.</p>
+          <div class="special-card-footer">
+            <span class="price">$28</span>
+            <span class="avail">Sundays only</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="special-card">
+        <div class="special-card-image"></div>
+        <div class="special-card-body">
+          <span class="special-day">Tue – Wed</span>
+          <h3>Forest Mushroom Risotto</h3>
+          <p class="desc">Creamy arborio rice, foraged local mushrooms, white truffle oil, fresh herbs. Vegan option available.</p>
+          <div class="special-card-footer">
+            <span class="price">$19</span>
+            <span class="avail">Tue & Wed only</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="availability-note">
+      <div class="icon">🌿</div>
+      <div>
+        <h3>About Our Specials</h3>
+        <p>Specials are subject to seasonal availability. Our kitchen sources the freshest ingredients daily — if an item is sold out, your server will recommend something equally delicious. Please inform us of any allergies.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="site-footer">
+    <p>© 2026 The Copper Kettle · Vanderhoof, BC · <a href="tel:2505678901">250-567-8901</a></p>
   </footer>
 
-  <script src="app.js"></script>
-  <script>loadSpecials();</script>
 </body>
 </html>
