@@ -115,14 +115,17 @@ body {
 }
 .intro-video {
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 100%;
+  width: 100%;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
 }
 .intro-video video {
   width: 100%;
+  max-width: 700px;
   display: block;
+  margin: 0 auto;
 }
 .btn {
   padding: 14px 28px;
