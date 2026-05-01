@@ -199,6 +199,7 @@ body {
   color: var(--text-muted);
   margin-bottom: 16px;
   max-width: 720px;
+  text-align: center;
 }
 
 /* ── Cards ── */
