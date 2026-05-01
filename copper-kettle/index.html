@@ -4,92 +4,122 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Copper Kettle | Farm-to-Table Dining in Vanderhoof</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">The Copper Kettle</a>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="specials.html">Specials</a>
-        <a href="hours.html">Hours</a>
+    <div class="header-inner">
+      <a href="index.html" class="logo">The Copper <span>Kettle</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html">Specials</a></li>
+          <li><a href="hours.html">Hours</a></li>
+        </ul>
       </nav>
-      <a href="tel:2505678901" class="cta">Reserve</a>
+      <a href="tel:2505678901" class="cta">Reserve a Table</a>
     </div>
   </header>
 
   <section class="hero">
-    <div class="container hero-inner">
-      <span class="badge">Farm-to-Table Vanderhoof</span>
-      <h1>Where every meal tells a story</h1>
-      <p>Fresh ingredients from local farms, crafted into dishes worth travelling for.</p>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+        Farm-to-Table · Vanderhoof, BC
+      </div>
+      <h1>Where every meal<br>tells a <em>story</em></h1>
+      <p class="hero-sub">Fresh ingredients from the forests and farms of British Columbia, crafted into dishes worth the drive.</p>
       <div class="cta-row">
-        <a href="menu.html" class="btn btn-primary">View Menu</a>
+        <a href="menu.html" class="btn btn-primary">View the Menu</a>
         <a href="hours.html" class="btn btn-secondary">Hours & Location</a>
       </div>
     </div>
   </section>
 
   <section class="features container">
-    <div class="grid">
-      <div class="card">
-        <div class="icon">🌿</div>
-        <h3>Locally Sourced</h3>
-        <p>From farms within 100km of our kitchen.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🌲</div>
+        <h3>Locally Foraged</h3>
+        <p>Morel mushrooms, wild herbs, and ingredients sourced from within 100km of our kitchen.</p>
       </div>
-      <div class="card">
-        <div class="icon">👨‍🍳</div>
+      <div class="feature-card">
+        <div class="feature-icon">👨‍🍳</div>
         <h3>Chef-Crafted</h3>
-        <p>Seasonal menus, crafted with care.</p>
+        <p>Seasonal menus that change with the rhythms of the Pacific Northwest forest and farm.</p>
       </div>
-      <div class="card">
-        <div class="icon">🍷</div>
-        <h3>BC Wine List</h3>
-        <p>Pairings from top BC producers.</p>
+      <div class="feature-card">
+        <div class="feature-icon">🍷</div>
+        <h3>BC Wine & Cider</h3>
+        <p>Carefully curated pairings from the finest producers across British Columbia.</p>
       </div>
     </div>
   </section>
 
   <section class="specials-preview container">
-    <div class="section-head">
-      <span class="badge">Chef's Specials</span>
-      <h2>This Week</h2>
+    <div class="section-header">
+      <span class="eyebrow">Chef's Corner</span>
+      <h2>This Week's Specials</h2>
     </div>
-    <div class="grid specials" id="home-specials">
-      <div class="card">
-        <div class="image" style="height:140px;background:#eee;border-radius:8px 8px 0 0;"></div>
-        <div class="content" style="padding:12px 8px 16px;">
-          <div class="title">Friday Fish & Chips</div>
-          <div class="subtitle">$22.00</div>
+    <div class="specials-grid" id="home-specials">
+      <div class="special-card">
+        <div class="special-img"></div>
+        <div class="special-body">
+          <span class="special-tag">Friday</span>
+          <div class="title">Cedar-Plank Salmon</div>
+          <div class="price">$28.00</div>
         </div>
       </div>
-      <div class="card">
-        <div class="image" style="height:140px;background:#eee;border-radius:8px 8px 0 0;"></div>
-        <div class="content" style="padding:12px 8px 16px;">
-          <div class="title">Sunday Roast</div>
-          <div class="subtitle">$28.00</div>
+      <div class="special-card">
+        <div class="special-img"></div>
+        <div class="special-body">
+          <span class="special-tag">Sunday</span>
+          <div class="title">Slow-Braised Elk Ragù</div>
+          <div class="price">$32.00</div>
         </div>
       </div>
-      <div class="card">
-        <div class="image" style="height:140px;background:#eee;border-radius:8px 8px 0 0;"></div>
-        <div class="content" style="padding:12px 8px 16px;">
-          <div class="title">Midweek Mushroom Special</div>
-          <div class="subtitle">$19.00</div>
+      <div class="special-card">
+        <div class="special-img"></div>
+        <div class="special-body">
+          <span class="special-tag">Weekdays</span>
+          <div class="title">Forest Mushroom Risotto</div>
+          <div class="price">$22.00</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="hours container">
-    <h2>Hours</h2>
-    <p>Mon-Sun: 11:00 AM – 9:00 PM</p>
+  <section class="hours-section">
+    <div class="container hours-inner">
+      <h2>Visit Us</h2>
+      <p class="tagline">Located in the heart of Vanderhoof, BC</p>
+      <div class="hours-grid">
+        <div class="hours-block">
+          <div class="label">Mon – Thu</div>
+          <div class="time">11am – 9pm</div>
+        </div>
+        <div class="hours-block">
+          <div class="label">Fri – Sat</div>
+          <div class="time">11am – 10pm</div>
+        </div>
+        <div class="hours-block">
+          <div class="label">Sunday</div>
+          <div class="time">12pm – 6pm</div>
+        </div>
+      </div>
+      <a href="hours.html" class="btn">See Full Hours</a>
+    </div>
   </section>
 
-  <footer class="site-footer container">
-    <p>&copy; 2026 The Copper Kettle. All rights reserved.</p>
+  <footer class="site-footer">
+    <p>© 2026 The Copper Kettle · Vanderhoof, BC · <a href="tel:2505678901">250-567-8901</a></p>
   </footer>
 
 </body>
