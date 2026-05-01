@@ -3,483 +3,313 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Just Forward — Website Updates by Email | Gentoolink</title>
-  <meta name="description" content="We build fast plain HTML websites. When you need an update, just email us. No dashboard, no CMS, no logging in.">
+  <title>Just Forward — Your Website Has an Assistant Now | Gentoolink</title>
+  <meta name="description" content="Plain HTML websites that you never touch. Just email what you want changed — your site gets updated and you get a reply. No dashboard. No logging in. No CMS.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✉️</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f5f3ee;
+      --bg: #f7f5f0;
       --bg-card: #ffffff;
       --text: #1a1a1a;
       --text-muted: #555;
       --text-subtle: #888;
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --primary-light: #dbeafe;
-      --accent: #10b981;
-      --border: #e2e0db;
-      --shadow: 0 4px 20px rgba(37,99,235,0.08);
-      --shadow-hover: 0 8px 36px rgba(37,99,235,0.14);
+      --primary: #1a56db;
+      --primary-dark: #1240a8;
+      --primary-light: #dbe4ff;
+      --accent: #16a34a;
+      --accent-light: #dcfce7;
+      --border: #e2e0d8;
+      --shadow: 0 4px 24px rgba(26,86,219,0.07);
+      --shadow-hover: 0 8px 40px rgba(26,86,219,0.13);
       --radius: 16px;
       --max-width: 760px;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
     h1, h2, h3 { font-family: 'Lora', Georgia, serif; letter-spacing: -0.02em; }
     a { color: var(--primary); }
 
-    /* ─── Nav ─────────────────────────────── */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 20px 24px;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Lora', serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text);
-      text-decoration: none;
-    }
-    .nav-logo:hover { text-decoration: none; opacity: 0.85; }
-    .nav-cta {
-      font-size: 0.85rem;
-      font-weight: 600;
-      background: var(--primary);
-      color: #fff;
-      padding: 9px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.15s;
-    }
-    .nav-cta:hover { background: var(--primary-dark); text-decoration: none; }
-
-    /* ─── Container ──────────────────────── */
     .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
-    /* ─── Hero ───────────────────────────── */
-    .hero {
-      text-align: center;
-      padding: 64px 24px 72px;
-    }
-    .hero-badge {
-      display: inline-block;
-      background: var(--primary-light);
-      color: var(--primary-dark);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 6px 16px;
-      border-radius: 999px;
-      margin-bottom: 24px;
-    }
-    .hero h1 {
-      font-size: clamp(2.2rem, 6vw, 3.4rem);
-      line-height: 1.15;
-      color: var(--text);
-      margin-bottom: 20px;
-    }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--primary);
-    }
-    .hero p {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 520px;
-      margin: 0 auto 36px;
-      line-height: 1.7;
-    }
-    .hero-email {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--bg-card);
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
-      padding: 14px 24px;
-      font-size: 1rem;
-      color: var(--text-muted);
-      box-shadow: var(--shadow);
-    }
-    .hero-email strong { color: var(--text); font-weight: 700; }
+    /* ─── Nav ─── */
+    nav { display: flex; justify-content: space-between; align-items: center; max-width: var(--max-width); margin: 0 auto; padding: 22px 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 8px; font-family: 'Lora', serif; font-size: 1.15rem; font-weight: 700; color: var(--text); text-decoration: none; }
+    .nav-logo:hover { text-decoration: none; opacity: 0.85; }
+    .nav-cta { font-size: 0.85rem; font-weight: 600; background: var(--primary); color: #fff; padding: 9px 20px; border-radius: 8px; text-decoration: none; transition: background 0.15s; }
+    .nav-cta:hover { background: var(--primary-dark); text-decoration: none; }
 
-    /* ─── How It Works ─────────────────── */
-    .how { padding: 72px 0; border-top: 1px solid var(--border); }
-    .how h2 { text-align: center; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 48px; color: var(--text); }
-    .steps { display: flex; flex-direction: column; gap: 0; }
-    .step {
-      display: flex;
-      gap: 24px;
-      align-items: flex-start;
-      padding: 28px 0;
-      border-bottom: 1px solid var(--border);
-    }
+    /* ─── Hero ─── */
+    .hero { text-align: center; padding: 72px 24px 80px; }
+    .hero-badge { display: inline-block; background: var(--primary-light); color: var(--primary-dark); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 5px 14px; border-radius: 999px; margin-bottom: 28px; }
+    .hero h1 { font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: 1.12; margin-bottom: 22px; }
+    .hero h1 em { font-style: normal; color: var(--primary); }
+    .hero p { font-size: 1.12rem; color: var(--text-muted); max-width: 520px; margin: 0 auto 36px; }
+    .hero-email-box { display: inline-flex; align-items: center; gap: 12px; background: var(--bg-card); border: 1.5px solid var(--border); border-radius: 14px; padding: 16px 28px; box-shadow: var(--shadow); font-size: 0.95rem; color: var(--text-muted); }
+    .hero-email-box strong { color: var(--text); font-weight: 700; font-size: 1.05rem; }
+
+    /* ─── Pull Quote ─── */
+    .pullquote { background: var(--primary); color: #fff; padding: 48px 24px; text-align: center; }
+    .pullquote-inner { max-width: 600px; margin: 0 auto; }
+    .pullquote p { font-family: 'Lora', serif; font-size: clamp(1.3rem, 3vw, 1.8rem); line-height: 1.4; color: #fff; }
+    .pullquote p em { font-style: normal; color: #bfdbfe; }
+    .pullquote-sub { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 14px; }
+
+    /* ─── Section ─── */
+    .section { padding: 72px 0; }
+    .section-sm { padding: 48px 0; }
+    .section-header { text-align: center; margin-bottom: 48px; }
+    .section-header h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 10px; }
+    .section-header p { color: var(--text-muted); font-size: 0.95rem; }
+    .divider { border: none; border-top: 1px solid var(--border); }
+
+    /* ─── How It Works ─── */
+    .steps { display: flex; flex-direction: column; }
+    .step { display: flex; gap: 24px; align-items: flex-start; padding: 28px 0; border-bottom: 1px solid var(--border); }
     .step:last-child { border-bottom: none; }
-    .step-num {
-      flex-shrink: 0;
-      width: 44px; height: 44px;
-      background: var(--primary-light);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--primary-dark);
-    }
+    .step-num { flex-shrink: 0; width: 44px; height: 44px; background: var(--primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; color: var(--primary-dark); }
     .step-body h3 { font-size: 1.05rem; color: var(--text); margin-bottom: 6px; }
-    .step-body p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
-    .step-email {
-      display: inline-block;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 8px 14px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-top: 8px;
-      font-family: 'Courier New', monospace;
-    }
+    .step-body p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; }
+    .step-email { display: inline-block; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; color: var(--primary); margin-top: 8px; font-family: 'Courier New', monospace; }
 
-    /* ─── Divider ───────────────────────── */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0;
-    }
+    /* ─── Contrast Box ─── */
+    .contrast { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .contrast-header { background: var(--text); color: #fff; padding: 16px 24px; display: flex; gap: 12px; align-items: center; }
+    .contrast-header span { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+    .contrast-body { display: grid; grid-template-columns: 1fr 1fr; }
+    .contrast-col { padding: 28px 24px; }
+    .contrast-col.old { border-right: 1px solid var(--border); background: #fff9f9; }
+    .contrast-col.new { background: #f0fdf4; }
+    .contrast-col h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 16px; color: var(--text-muted); }
+    .contrast-col.new h4 { color: var(--accent); }
+    .contrast-item { display: flex; gap: 10px; align-items: baseline; margin-bottom: 10px; font-size: 0.88rem; }
+    .contrast-item:last-child { margin-bottom: 0; }
+    .contrast-icon { flex-shrink: 0; }
+    .contrast-col.old .contrast-icon { color: #ef4444; }
+    .contrast-col.new .contrast-icon { color: var(--accent); }
 
-    /* ─── What You Can Update ──────────── */
-    .what { padding: 72px 0; }
-    .what h2 { text-align: center; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 12px; }
-    .what-sub { text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 40px; }
-    .what-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .what-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px 18px;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      text-align: center;
-    }
-    .what-item strong { display: block; color: var(--text); font-weight: 600; margin-bottom: 4px; font-size: 0.92rem; }
-    .what-icon { font-size: 1.4rem; margin-bottom: 8px; }
+    /* ─── What You Can Change ─── */
+    .what-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .what-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 16px; text-align: center; }
+    .what-item strong { display: block; font-size: 0.9rem; color: var(--text); margin-bottom: 4px; }
+    .what-item span { font-size: 0.8rem; color: var(--text-muted); }
+    .what-icon { font-size: 1.3rem; margin-bottom: 8px; }
 
-    /* ─── Pricing ───────────────────────── */
+    /* ─── Pricing ─── */
     .pricing { padding: 72px 0; background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .pricing h2 { text-align: center; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 12px; }
-    .pricing-sub { text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 40px; }
     .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .plan {
-      background: var(--bg);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      position: relative;
-    }
-    .plan.featured {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: #fff;
-    }
-    .plan-badge {
-      position: absolute;
-      top: -12px; left: 50%;
-      transform: translateX(-50%);
-      background: var(--accent);
-      color: #fff;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 4px 14px;
-      border-radius: 999px;
-      white-space: nowrap;
-    }
-    .plan-name {
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    .plan.featured .plan-name { color: rgba(255,255,255,0.75); }
-    .plan-price {
-      font-family: 'Lora', serif;
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.1;
-    }
+    .plan { background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 28px 22px; position: relative; }
+    .plan.featured { background: var(--primary); border-color: var(--primary); }
+    .plan-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 4px 14px; border-radius: 999px; white-space: nowrap; }
+    .plan-name { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
+    .plan.featured .plan-name { color: rgba(255,255,255,0.65); }
+    .plan-price { font-family: 'Lora', serif; font-size: 2.6rem; font-weight: 700; color: var(--text); line-height: 1.1; }
     .plan.featured .plan-price { color: #fff; }
-    .plan-period { font-size: 0.8rem; color: var(--text-subtle); }
-    .plan.featured .plan-period { color: rgba(255,255,255,0.65); }
-    .plan-divider { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+    .plan-period { font-size: 0.78rem; color: var(--text-subtle); margin-bottom: 16px; }
+    .plan.featured .plan-period { color: rgba(255,255,255,0.6); }
+    .plan-divider { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
     .plan.featured .plan-divider { border-color: rgba(255,255,255,0.2); }
-    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .plan-features li { font-size: 0.85rem; color: var(--text-muted); padding-left: 20px; position: relative; }
+    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .plan-features li { font-size: 0.84rem; color: var(--text-muted); padding-left: 18px; position: relative; }
     .plan.featured .plan-features li { color: rgba(255,255,255,0.85); }
-    .plan-features li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 700;
-    }
-    .plan.featured .plan-features li::before { color: #6ee7b7; }
-    .plan-cta {
-      display: block;
-      text-align: center;
-      margin-top: 20px;
-      padding: 11px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      text-decoration: none;
-      background: var(--bg-card);
-      color: var(--primary);
-      transition: all 0.15s;
-    }
-    .plan.featured .plan-cta {
-      background: #fff;
-      color: var(--primary);
-    }
-    .plan-cta:hover { opacity: 0.9; text-decoration: none; }
+    .plan-features li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; font-size: 0.75rem; top: 2px; }
+    .plan.featured .plan-features li::before { color: #86efac; }
+    .plan-cta { display: block; text-align: center; margin-top: 18px; padding: 10px; border-radius: 10px; font-weight: 700; font-size: 0.88rem; text-decoration: none; background: var(--bg-card); color: var(--primary); }
+    .plan.featured .plan-cta { background: #fff; color: var(--primary); }
+    .plan-cta:hover { opacity: 0.92; text-decoration: none; }
 
-    /* ─── Bundle ────────────────────────── */
-    .bundle { padding: 72px 0; }
-    .bundle-card {
-      background: linear-gradient(135deg, #1e3a5f, #2563eb);
-      border-radius: var(--radius);
-      padding: 48px 40px;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 32px;
-      flex-wrap: wrap;
-    }
-    .bundle-left h3 {
-      font-size: clamp(1.3rem, 3vw, 1.8rem);
-      color: #fff;
-      margin-bottom: 8px;
-    }
-    .bundle-left p { color: rgba(255,255,255,0.7); font-size: 0.92rem; max-width: 400px; }
+    /* ─── Bundle ─── */
+    .bundle-card { background: linear-gradient(135deg, #1e3a5f, var(--primary)); border-radius: var(--radius); padding: 44px 40px; color: #fff; display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
+    .bundle-left h3 { font-size: clamp(1.2rem, 3vw, 1.7rem); color: #fff; margin-bottom: 8px; }
+    .bundle-left p { color: rgba(255,255,255,0.68); font-size: 0.9rem; max-width: 400px; }
     .bundle-right { text-align: right; flex-shrink: 0; }
-    .bundle-price { font-family: 'Lora', serif; font-size: 2.2rem; font-weight: 700; }
-    .bundle-price span { font-size: 0.9rem; font-weight: 400; opacity: 0.7; }
-    .bundle-note { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 4px; }
-    .bundle-cta {
-      display: inline-block;
-      background: #fff;
-      color: var(--primary);
-      font-weight: 700;
-      padding: 12px 28px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      margin-top: 16px;
-      transition: all 0.15s;
-    }
-    .bundle-cta:hover { opacity: 0.92; text-decoration: none; }
+    .bundle-price { font-family: 'Lora', serif; font-size: 2.4rem; font-weight: 700; }
+    .bundle-price span { font-size: 0.85rem; font-weight: 400; opacity: 0.65; }
+    .bundle-note { font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-top: 4px; }
+    .bundle-cta { display: inline-block; background: #fff; color: var(--primary); font-weight: 700; padding: 11px 26px; border-radius: 10px; text-decoration: none; font-size: 0.88rem; margin-top: 14px; }
 
-    /* ─── FAQ ──────────────────────────── */
-    .faq { padding: 72px 0; }
-    .faq h2 { text-align: center; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 40px; }
-    .faq-list { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
-    .faq-item { border-bottom: 1px solid var(--border); }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-q {
-      display: block;
-      width: 100%;
-      text-align: left;
-      background: none;
-      border: none;
-      padding: 20px 0;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text);
-      cursor: pointer;
-      font-family: inherit;
-    }
-    .faq-q:hover { color: var(--primary); }
-    .faq-a {
-      display: none;
-      padding: 0 0 20px;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.65;
-    }
-    .faq-item.open .faq-a { display: block; }
-    .faq-item.open .faq-q { color: var(--primary); }
-
-    /* ─── CTA ───────────────────────────── */
+    /* ─── CTA ─── */
     .cta { padding: 80px 0; text-align: center; }
     .cta h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin-bottom: 14px; }
-    .cta p { color: var(--text-muted); margin-bottom: 28px; font-size: 1rem; }
-    .cta-btn {
-      display: inline-block;
-      background: var(--primary);
-      color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 14px 36px;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: all 0.15s;
-      box-shadow: 0 4px 14px rgba(37,99,235,0.3);
-    }
+    .cta p { color: var(--text-muted); margin-bottom: 28px; font-size: 1rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .cta-btn { display: inline-block; background: var(--primary); color: #fff; font-weight: 700; font-size: 1rem; padding: 14px 36px; border-radius: 12px; text-decoration: none; transition: all 0.15s; box-shadow: 0 4px 14px rgba(26,86,219,0.3); }
     .cta-btn:hover { background: var(--primary-dark); text-decoration: none; transform: translateY(-1px); }
+    .cta-sub { margin-top: 14px; font-size: 0.82rem; color: var(--text-subtle); }
 
-    /* ─── Footer ───────────────────────── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 24px;
-      text-align: center;
-      color: var(--text-subtle);
-      font-size: 0.82rem;
-    }
+    /* ─── Footer ─── */
+    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; color: var(--text-subtle); font-size: 0.82rem; }
 
-    /* ─── Responsive ─────────────────────── */
+    /* ─── Responsive ─── */
     @media (max-width: 700px) {
-      .plans { grid-template-columns: 1fr; }
+      .plans { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
       .what-grid { grid-template-columns: repeat(2, 1fr); }
-      .bundle-card { padding: 36px 24px; }
+      .contrast-body { grid-template-columns: 1fr; }
+      .contrast-col.old { border-right: none; border-bottom: 1px solid var(--border); }
+      .bundle-card { padding: 32px 24px; }
       .bundle-right { text-align: left; }
     }
     @media (max-width: 480px) {
       .what-grid { grid-template-columns: 1fr 1fr; }
-      .hero-email { font-size: 0.88rem; padding: 12px 16px; }
     }
   </style>
 </head>
 <body>
 
-<!-- ─── Nav ─────────────────────────────────────── -->
+<!-- Nav -->
 <nav>
   <a href="#" class="nav-logo">✉️ Just Forward</a>
   <a href="#contact" class="nav-cta">Get Started</a>
 </nav>
 
-<!-- ─── Hero ─────────────────────────────────────── -->
+<!-- Hero -->
 <section class="hero">
-  <div class="hero-badge">Update Your Website by Email</div>
-  <h1>Your website,<br><em>updated by email.</em></h1>
-  <p>No dashboard. No logging in. No WordPress. Just send an email — we'll update your site and reply when it's done.</p>
-  <div class="hero-email">
-    📬 Send updates to <strong>updates@yourwebsite.com</strong>
+  <div class="hero-badge">Website Updates That Write Themselves</div>
+  <h1>Your website<br><em>has an assistant now.</em></h1>
+  <p>We build your site in plain HTML. When you need a change, you email what you want — and we update it. No dashboard. No logging in. No CMS to learn.</p>
+  <div class="hero-email-box">
+    ✉️ Just email: <strong>updates@yourbusiness.com</strong>
   </div>
 </section>
 
-<!-- ─── How It Works ─────────────────────────────── -->
-<section class="how">
-  <div class="container">
-    <h2>Three steps. That's it.</h2>
-    <div class="steps">
+<!-- Pull Quote -->
+<section class="pullquote">
+  <div class="pullquote-inner">
+    <p>"Other website companies give you a dashboard.<br>We give you an <em>email address.</em>"</p>
+    <div class="pullquote-sub">That's the whole product.</div>
+  </div>
+</section>
 
+<!-- How It Works -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Here's how it works</h2>
+      <p>The CMS isn't software anymore. It's an assistant.</p>
+    </div>
+    <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-body">
-          <h3>We build your site — plain HTML, no plugins</h3>
-          <p>Fast, lightweight pages that load quick and rank well. No WordPress bloat, no database to hack, no plugin updates. Just clean HTML and CSS that we host on our server.</p>
+          <h3>We build your site in plain HTML</h3>
+          <p>Fast, clean pages. No WordPress bloat, no database, no plugins to update. Just HTML and CSS that loads fast and ranks well. We host it on our server.</p>
         </div>
       </div>
-
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-body">
           <h3>Email what you want changed</h3>
-          <p>Phone number updated? New hours? Seasonal menu swap? Holiday closure? Just describe it naturally in an email. No special format, no codes — plain English works fine.</p>
+          <p>Hours updated? Holiday closure? New phone number? New menu item? Just send an email. No format, no codes, no special app. Describe it in plain English — like you're texting a coworker.</p>
+          <div class="step-email">updates@yourbusiness.com</div>
         </div>
       </div>
-
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-body">
-          <h3>We update it — you get a confirmation reply</h3>
-          <p>Our AI agent edits the file, pushes it live, and replies to confirm. Usually within the hour. No logging in, no dashboards, no CMS to learn.</p>
+          <h3>We update it. You get a reply.</h3>
+          <p>Our AI assistant edits the file, pushes it live, and replies to confirm. Usually within the hour. You never touch the website.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
 <hr class="divider">
 
-<!-- ─── What You Can Update ─────────────────────── -->
-<section class="what">
+<!-- Contrast: Old vs New -->
+<section class="section-sm">
   <div class="container">
-    <h2>What can you change?</h2>
-    <p class="what-sub">Almost anything. Just describe what you need.</p>
+    <div class="section-header">
+      <h2>The old way vs. the Just Forward way</h2>
+      <p>Same result. Radically different experience.</p>
+    </div>
+    <div class="contrast">
+      <div class="contrast-header">
+        <span>🚫 Old</span>
+        <span style="margin-left:auto; opacity:0.5">vs</span>
+        <span style="margin-left:auto">✅ New</span>
+      </div>
+      <div class="contrast-body">
+        <div class="contrast-col old">
+          <h4>The old way</h4>
+          <div class="contrast-item"><span class="contrast-icon">❌</span> Remember your WordPress password</div>
+          <div class="contrast-item"><span class="contrast-icon">❌</span> Navigate to the right page</div>
+          <div class="contrast-item"><span class="contrast-icon">❌</span> Find the right field to edit</div>
+          <div class="contrast-item"><span class="contrast-icon">❌</span> Worry about accidentally breaking something</div>
+          <div class="contrast-item"><span class="contrast-icon">❌</span> Publish and hope it saved</div>
+          <div class="contrast-item"><span class="contrast-icon">❌</span> Update plugins so you don't get hacked</div>
+          <div class="contrast-item"><span class="contrast-icon">❌</span> Pay for hosting + domain + security + backups</div>
+        </div>
+        <div class="contrast-col new">
+          <h4>The Just Forward way</h4>
+          <div class="contrast-item"><span class="contrast-icon">✓</span> Email what you want changed</div>
+          <div class="contrast-item"><span class="contrast-icon">✓</span> We find the right page and field</div>
+          <div class="contrast-item"><span class="contrast-icon">✓</span> We make the change and push it live</div>
+          <div class="contrast-item"><span class="contrast-icon">✓</span> We reply when it's done</div>
+          <div class="contrast-item"><span class="contrast-icon">✓</span> We handle security and backups</div>
+          <div class="contrast-item"><span class="contrast-icon">✓</span> Your site is always fast and always live</div>
+          <div class="contrast-item"><span class="contrast-icon">✓</span> One simple monthly price</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- What You Can Change -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>What can you change?</h2>
+      <p>Just describe it in an email. That's it.</p>
+    </div>
     <div class="what-grid">
       <div class="what-item">
         <div class="what-icon">🕐</div>
-        <strong>Hours & Holiday Closures</strong>
-        "Change our hours to Mon-Fri 9am-6pm"
+        <strong>Hours & Closures</strong>
+        <span>"Change hours to Mon–Fri 9am–6pm"</span>
       </div>
       <div class="what-item">
         <div class="what-icon">📞</div>
-        <strong>Phone & Contact Info</strong>
-        "Update our main line to 250-555-0199"
+        <strong>Phone & Contact</strong>
+        <span>"Update main line to 250-555-0100"</span>
       </div>
       <div class="what-item">
         <div class="what-icon">🍽️</div>
-        <strong>Menu Items & Prices</strong>
-        "Swap the lunch special to fish tacos, $14.95"
+        <strong>Menu & Pricing</strong>
+        <span>"Swap lunch special to fish tacos"</span>
       </div>
       <div class="what-item">
         <div class="what-icon">📢</div>
-        <strong>Banners & Announcements</strong>
-        "Add a banner saying we're closed July 1-3"
+        <strong>Banners & Notices</strong>
+        <span>"Add closure banner: July 1–3"</span>
       </div>
       <div class="what-item">
         <div class="what-icon">📍</div>
         <strong>Address & Directions</strong>
-        "Update our address to 456 Oak St"
+        <span>"Update address to 456 Oak St"</span>
       </div>
       <div class="what-item">
         <div class="what-icon">📄</div>
-        <strong>Service Pages & Copy</strong>
-        "Rewrite the 'About Us' paragraph"
-      </div>
-      <div class="what-item">
-        <div class="what-icon">💰</div>
-        <strong>Pricing Changes</strong>
-        "Update our membership pricing — $89/mo single, $149/mo family"
+        <strong>Page Copy</strong>
+        <span>"Rewrite the About Us paragraph"</span>
       </div>
       <div class="what-item">
         <div class="what-icon">🌐</div>
-        <strong>Links & Social Media</strong>
-        "Change our Instagram to @newhandle"
+        <strong>Social Links</strong>
+        <span>"Change Instagram to @newhandle"</span>
       </div>
       <div class="what-item">
         <div class="what-icon">📸</div>
         <strong>Photos & Images</strong>
-        "Replace the team photo — I'll email you the new one"
+        <span>"Replace the team photo — I'll email it"</span>
+      </div>
+      <div class="what-item">
+        <div class="what-icon">💬</div>
+        <strong>Anything Else</strong>
+        <span>"Just tell us what you need"</span>
       </div>
     </div>
   </div>
@@ -487,27 +317,27 @@
 
 <hr class="divider">
 
-<!-- ─── Pricing ─────────────────────────────────── -->
+<!-- Pricing -->
 <section class="pricing">
   <div class="container">
-    <h2>Simple, honest pricing</h2>
-    <p class="pricing-sub">No surprises. Cancel anytime. No contracts.</p>
+    <div class="section-header">
+      <h2>Simple pricing</h2>
+      <p>Cancel anytime. No contracts. No surprise bills.</p>
+    </div>
     <div class="plans">
-
       <div class="plan">
-        <div class="plan-name">Text</div>
+        <div class="plan-name">Starter</div>
         <div class="plan-price">$29</div>
         <div class="plan-period">per month</div>
         <hr class="plan-divider">
         <ul class="plan-features">
           <li>20 updates per month</li>
-          <li>1 website page managed</li>
+          <li>1 website</li>
           <li>Undo last change</li>
-          <li>Confirmation reply per update</li>
+          <li>Email confirmation</li>
         </ul>
         <a href="#contact" class="plan-cta">Get Started</a>
       </div>
-
       <div class="plan featured">
         <div class="plan-badge">Most Popular</div>
         <div class="plan-name">Pro</div>
@@ -516,15 +346,14 @@
         <hr class="plan-divider">
         <ul class="plan-features">
           <li>75 updates per month</li>
-          <li>5 pages managed</li>
-          <li>Google Business Profile sync</li>
+          <li>Up to 3 websites</li>
           <li>Undo last change</li>
-          <li>Confirmation reply per update</li>
-          <li>Priority support</li>
+          <li>Email confirmation</li>
+          <li>Priority response</li>
+          <li>Monthly usage report</li>
         </ul>
         <a href="#contact" class="plan-cta">Get Started</a>
       </div>
-
       <div class="plan">
         <div class="plan-name">Agency</div>
         <div class="plan-price">$149</div>
@@ -532,32 +361,34 @@
         <hr class="plan-divider">
         <ul class="plan-features">
           <li>Unlimited updates</li>
-          <li>15 pages managed</li>
-          <li>Google Business Profile sync</li>
+          <li>Up to 10 websites</li>
           <li>Undo last change</li>
-          <li>Multi-user access (5 seats)</li>
-          <li>Priority support</li>
+          <li>Email confirmation</li>
+          <li>Priority response</li>
+          <li>Multi-user access</li>
         </ul>
         <a href="#contact" class="plan-cta">Get Started</a>
       </div>
-
     </div>
+    <p style="text-align:center; margin-top:24px; font-size:0.82rem; color:var(--text-subtle);">One-time setup fee of $149 applies. Includes domain and hosting for the first year.</p>
   </div>
 </section>
 
-<!-- ─── Bundle ─────────────────────────────────── -->
-<section class="bundle">
+<!-- Bundle -->
+<section class="section-sm">
   <div class="container">
     <div class="bundle-card">
       <div class="bundle-left">
-        <h3>Also running the AI Receptionist?</h3>
-        <p>Bundle Just Forward with our AI Receptionist and get both — phone and website updates — all through text and email. One less thing to worry about.</p>
+        <h3>Also need a phone receptionist?</h3>
+        <p>Bundle with our AI Receptionist and manage your website and phone — both through simple messages. One less thing on your plate.</p>
         <a href="#contact" class="bundle-cta">Ask About the Bundle →</a>
       </div>
       <div class="bundle-right">
         <div class="bundle-price">$179<span>/mo</span></div>
-        <div class="bundle-note">vs $208/mo billed separately</div>
-        <div class="bundle-price" style="margin-top:12px; font-size:1.6rem;">+$1,500<span> setup</span></div>
+        <div class="bundle-note">vs $208/mo separately</div>
+        <div style="margin-top:12px;">
+          <div class="bundle-price" style="font-size:1.5rem;">+$1,500<span> setup</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -565,67 +396,20 @@
 
 <hr class="divider">
 
-<!-- ─── FAQ ─────────────────────────────────────── -->
-<section class="faq">
-  <div class="container">
-    <h2>Common questions</h2>
-    <div class="faq-list">
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Why plain HTML instead of WordPress?</button>
-        <div class="faq-a">Plain HTML pages load faster, rank better in Google, and don't have the security vulnerabilities that WordPress sites do — no plugins to exploit, no databases to hack. Your site stays fast and reliable without you ever having to update a plugin again.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if you get the update wrong?</button>
-        <div class="faq-a">Every update can be undone with a single email: "Undo last change." We'll also send you a preview link before making any significant edits — so you approve before it goes live.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">How long does an update take?</button>
-        <div class="faq-a">Pro and Agency plans: typically within 30 minutes during business hours. Text plan: within 2 hours. Emergency changes (like a holiday closure announcement) can be expedited — just flag it in the subject line.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What counts as one "update"?</button>
-        <div class="faq-a">A single update is one change to one section of one page — changing your hours is one update, swapping a menu item is one update. Bulk changes (like updating 20 prices at once) count as one update if they're submitted together in one email. We log everything so you can see your usage anytime.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is my email address secure?</button>
-        <div class="faq-a">Completely. Your update address is private and spam-filtered — only emails you send to it reach our system. We never share or marketing-email your address. All data is encrypted in transit and at rest.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What's the setup process?</button>
-        <div class="faq-a">Three steps: (1) Share your website URL and who hosts it, (2) we configure your private update email address, (3) we test one update together to confirm everything works. Most clients are fully set up within 48 hours.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I upgrade or cancel anytime?</button>
-        <div class="faq-a">Yes. Upgrade anytime with one email. Cancel anytime — no contracts, no cancellation fees, no questions asked. We'll help you migrate off cleanly if you do.</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- ─── CTA ─────────────────────────────────────── -->
+<!-- CTA -->
 <section class="cta" id="contact">
   <div class="container">
-    <h2>Ready to stop logging in to update your website?</h2>
-    <p>Send us your website URL and we'll confirm it works — before you commit to anything.</p>
+    <h2>Stop logging in to change your hours.</h2>
+    <p>Send us your website idea — or just your business name. We'll confirm what we can build and what it would cost.</p>
     <a href="mailto:hello@gentoolinkwebservices.com?subject=Just%20Forward%20Enquiry" class="cta-btn">Email Us →</a>
-    <p style="margin-top: 16px; font-size: 0.82rem; color: var(--text-subtle);">Or call/text: (604) 218-7290</p>
+    <p class="cta-sub">Or call/text: (604) 218-7290</p>
   </div>
 </section>
 
-<!-- ─── Footer ─────────────────────────────────── -->
+<!-- Footer -->
 <footer>
   <div>✉️ Just Forward is a product of <a href="https://gentoolinkwebservices.com">Gentoolink Web Services</a></div>
-  <div style="margin-top: 6px;">Vanderhoof · Prince George · Fort St. James</div>
+  <div style="margin-top:6px;">Vanderhoof · Prince George · Fort St. James · Quesnel · Burns Lake</div>
 </footer>
 
 </body>
