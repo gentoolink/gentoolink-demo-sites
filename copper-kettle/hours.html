@@ -3,36 +3,429 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hours | The Copper Kettle</title>
+  <title>Hours & Location | The Copper Kettle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .hours-hero {
+      background: var(--forest);
+      padding: 72px 28px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hours-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 100%, rgba(107, 143, 113, 0.2) 0%, transparent 60%);
+    }
+    .hours-hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .hours-hero .eyebrow {
+      display: inline-block;
+      background: rgba(139, 94, 60, 0.25);
+      border: 1px solid rgba(139, 94, 60, 0.4);
+      color: var(--cedar-light);
+      padding: 5px 18px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .hours-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 600;
+      color: var(--birch);
+      margin-bottom: 14px;
+    }
+    .hours-hero p {
+      color: var(--stone);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    .hours-layout {
+      padding: 72px 0 80px;
+    }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 56px;
+    }
+
+    .hours-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px 36px;
+      border: 1px solid var(--border);
+    }
+    .hours-card h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hours-card h2 .icon {
+      font-size: 1.2rem;
+    }
+
+    .day-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .day-row:last-child {
+      border-bottom: none;
+    }
+    .day-row:first-of-type {
+      padding-top: 0;
+    }
+    .day-name {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .day-time {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--forest);
+    }
+    .day-time.closed {
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    .hours-note {
+      background: var(--forest);
+      border-radius: 12px;
+      padding: 24px 28px;
+      color: var(--stone);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .hours-note .icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .location-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px 36px;
+      border: 1px solid var(--border);
+    }
+    .location-card h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .location-card h2 .icon {
+      font-size: 1.2rem;
+    }
+    .location-detail {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 20px;
+      align-items: flex-start;
+    }
+    .location-detail .icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+    .location-detail h3 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-light);
+      margin-bottom: 3px;
+    }
+    .location-detail p,
+    .location-detail a {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .location-detail a {
+      color: var(--cedar);
+      font-weight: 500;
+    }
+    .location-detail a:hover {
+      opacity: 0.8;
+    }
+
+    .map-placeholder {
+      background: linear-gradient(135deg, var(--forest-light), var(--moss));
+      border-radius: 12px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--birch);
+      font-size: 0.9rem;
+      margin-top: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+    .map-placeholder::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 5 L55 20 L55 40 L30 55 L5 40 L5 20 Z' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3C/svg%3E");
+      background-size: 60px 60px;
+    }
+    .map-placeholder span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .reservation-section {
+      background: var(--forest);
+      border-radius: 20px;
+      padding: 48px 52px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .reservation-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201, 168, 76, 0.12) 0%, transparent 60%);
+    }
+    .reservation-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .reservation-section h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--birch);
+      margin-bottom: 12px;
+    }
+    .reservation-section > .reservation-inner > p {
+      color: var(--stone);
+      font-size: 1rem;
+      margin-bottom: 28px;
+      line-height: 1.65;
+    }
+    .reservation-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+      transition: all var(--transition);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--cedar);
+      color: var(--birch);
+    }
+    .btn-primary:hover {
+      background: var(--cedar-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(139, 94, 60, 0.35);
+      opacity: 1;
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.1);
+      color: var(--birch);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.18);
+      border-color: rgba(255,255,255,0.4);
+      transform: translateY(-2px);
+      opacity: 1;
+    }
+
+    @media (max-width: 860px) {
+      .hours-grid {
+        grid-template-columns: 1fr;
+      }
+      .reservation-section {
+        padding: 36px 28px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .reservation-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">The Copper Kettle</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="specials.html">Specials</a></li>
-        <li><a href="hours.html" class="active">Hours</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">The Copper <span>Kettle</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html">Specials</a></li>
+          <li><a href="hours.html" class="active">Hours</a></li>
+        </ul>
+      </nav>
+      <a href="tel:2505678901" class="cta">Reserve</a>
+    </div>
   </header>
-  <main>
-    <section class="hours" aria-label="Operating hours" id="hours">
-      <h2>Hours</h2>
-      <ul class="hours-list" aria-label="Weekly hours">
-        <li>Monday – Thursday: 11:00 AM – 9:00 PM</li>
-        <li>Friday: 11:00 AM – 10:00 PM</li>
-        <li>Saturday: 11:00 AM – 10:00 PM</li>
-        <li>Sunday: 12:00 PM – 6:00 PM</li>
-      </ul>
-      <p class="hours-note">Hours subject to holidays and seasonal changes. Please call ahead to confirm.</p>
-    </section>
-  </main>
-  <footer>
-    <p>© 2026 The Copper Kettle. All rights reserved.</p>
+
+  <section class="hours-hero">
+    <div class="hours-hero-inner">
+      <div class="eyebrow">Plan Your Visit</div>
+      <h1>Hours & Location</h1>
+      <p>Located in the heart of Vanderhoof, BC. We'd love to welcome you in for a meal.</p>
+    </div>
+  </section>
+
+  <section class="hours-layout container">
+
+    <div class="hours-grid">
+
+      <!-- Operating Hours -->
+      <div class="hours-card">
+        <h2><span class="icon">🕐</span> Operating Hours</h2>
+        <div class="day-row">
+          <span class="day-name">Monday</span>
+          <span class="day-time">11:00 AM – 9:00 PM</span>
+        </div>
+        <div class="day-row">
+          <span class="day-name">Tuesday</span>
+          <span class="day-time">11:00 AM – 9:00 PM</span>
+        </div>
+        <div class="day-row">
+          <span class="day-name">Wednesday</span>
+          <span class="day-time">11:00 AM – 9:00 PM</span>
+        </div>
+        <div class="day-row">
+          <span class="day-name">Thursday</span>
+          <span class="day-time">11:00 AM – 9:00 PM</span>
+        </div>
+        <div class="day-row">
+          <span class="day-name">Friday</span>
+          <span class="day-time">11:00 AM – 10:00 PM</span>
+        </div>
+        <div class="day-row">
+          <span class="day-name">Saturday</span>
+          <span class="day-time">11:00 AM – 10:00 PM</span>
+        </div>
+        <div class="day-row">
+          <span class="day-name">Sunday</span>
+          <span class="day-time">12:00 PM – 6:00 PM</span>
+        </div>
+        <div class="hours-note" style="margin-top: 24px;">
+          <span class="icon">📞</span>
+          <span>Hours may vary on statutory holidays. We recommend calling ahead during holiday seasons to confirm.</span>
+        </div>
+      </div>
+
+      <!-- Location & Contact -->
+      <div class="location-card">
+        <h2><span class="icon">📍</span> Find Us</h2>
+        <div class="location-detail">
+          <div class="icon">🏠</div>
+          <div>
+            <h3>Address</h3>
+            <p>215 Burrard Street<br>Vanderhoof, BC V0J 3A0</p>
+          </div>
+        </div>
+        <div class="location-detail">
+          <div class="icon">📞</div>
+          <div>
+            <h3>Phone</h3>
+            <a href="tel:+12505678901">250-567-8901</a>
+          </div>
+        </div>
+        <div class="location-detail">
+          <div class="icon">✉</div>
+          <div>
+            <h3>Email</h3>
+            <a href="mailto:hello@copperkettle.ca">hello@copperkettle.ca</a>
+          </div>
+        </div>
+        <div class="location-detail">
+          <div class="icon">🅿</div>
+          <div>
+            <h3>Parking</h3>
+            <p>Free parking available on Burrard Street and the adjacent lot.</p>
+          </div>
+        </div>
+        <div class="map-placeholder">
+          <span>📍 Vanderhoof, BC</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Reservation CTA -->
+    <div class="reservation-section">
+      <div class="reservation-inner">
+        <h2>Reserve Your Table</h2>
+        <p>Call us or send an email to reserve your table. For parties of 6 or more, please contact us directly.</p>
+        <div class="reservation-buttons">
+          <a href="tel:+12505678901" class="btn btn-primary">📞 Call 250-567-8901</a>
+          <a href="mailto:hello@copperkettle.ca" class="btn btn-secondary">✉ Email Us</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="site-footer">
+    <p>© 2026 The Copper Kettle · Vanderhoof, BC · <a href="tel:2505678901">250-567-8901</a></p>
   </footer>
-  <script src="app.js"></script>
+
 </body>
 </html>
