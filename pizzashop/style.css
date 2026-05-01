@@ -150,38 +150,3 @@ body { font-family: 'Georgia', serif; }
   transition: all 0.2s;
 }
 .special-btn:hover { background: #f0f0ee; }
-
-/* Countdown Timer */
-.countdown {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.countdown-unit {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: rgba(0,0,0,0.25);
-  border-radius: 6px;
-  padding: 4px 8px;
-  min-width: 36px;
-}
-.countdown-unit span {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.2;
-  font-variant-numeric: tabular-nums;
-}
-.countdown-unit small {
-  font-size: 0.55rem;
-  color: rgba(255,255,255,0.75);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-@media (max-width: 700px) {
-  .countdown { gap: 4px; }
-  .countdown-unit { min-width: 28px; padding: 3px 5px; }
-  .countdown-unit span { font-size: 0.85rem; }
-  .countdown-unit small { font-size: 0.5rem; }
-}
