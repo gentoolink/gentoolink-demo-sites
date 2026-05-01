@@ -50,8 +50,16 @@ body {
   letter-spacing: -0.3px;
   text-decoration: none;
   color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.logo span { color: var(--accent); }
+.logo img {
+  height: 40px;
+  width: auto;
+}
+.logo span { color: var(--white); }
+.logo span span { color: var(--accent); }
 .tagline {
   font-size: 0.8rem;
   opacity: 0.7;
@@ -83,6 +91,11 @@ body {
 .header-phone:hover { background: var(--accent-hover); }
 
 /* ── Hero ── */
+.hero-logo {
+  max-width: 120px;
+  margin: 0 auto 24px;
+  display: block;
+}
 .hero {
   background: linear-gradient(rgba(26,35,50,0.85), rgba(26,35,50,0.9)),
               url('https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=1400') center/cover no-repeat;
@@ -494,7 +507,18 @@ body {
 }
 .site-footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
 .site-footer a:hover { color: var(--white); }
-.footer-logos { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+.footer-logo-img {
+  height: 50px;
+  width: auto;
+}
+.footer-logos {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
 .footer-logo-badge {
   background: rgba(255,255,255,0.08);
   border-radius: var(--radius);
