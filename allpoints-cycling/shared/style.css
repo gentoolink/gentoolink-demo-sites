@@ -55,7 +55,7 @@ body {
   gap: 10px;
 }
 .logo img {
-  height: 40px;
+  height: 20px;
   width: auto;
 }
 .logo span { color: var(--white); }
@@ -91,11 +91,6 @@ body {
 .header-phone:hover { background: var(--accent-hover); }
 
 /* ── Hero ── */
-.hero-logo {
-  max-width: 120px;
-  margin: 0 auto 24px;
-  display: block;
-}
 .hero {
   background: linear-gradient(rgba(26,35,50,0.85), rgba(26,35,50,0.9)),
               url('https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=1400') center/cover no-repeat;
