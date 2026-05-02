@@ -150,3 +150,36 @@ body { font-family: 'Georgia', serif; }
   transition: all 0.2s;
 }
 .special-btn:hover { background: #f0f0ee; }
+
+
+/* Trust Bar */
+.trust-bar {
+  background: #fff8f4;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 24px 16px;
+}
+.trust-bar .inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #333;
+}
+.trust-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+@media (max-width: 600px) {
+  .trust-bar .inner { gap: 16px; }
+  .trust-item { font-size: 0.82rem; }
+}
