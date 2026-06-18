@@ -286,7 +286,10 @@ h1, h2, h3, h4, h5 {
 .hero-image-bg {
   position: absolute;
   inset: -20px;
-  background: linear-gradient(135deg, var(--primary-bg) 0%, rgba(30, 58, 95, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(230, 247, 247, 0.7) 0%, rgba(30, 58, 95, 0.2) 100%),
+    url('https://images.unsplash.com/photo-1588776814546-1ffcd7df6fa1?auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
   border-radius: 40px;
   z-index: 0;
 }

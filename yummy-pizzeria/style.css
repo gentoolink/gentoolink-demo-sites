@@ -178,12 +178,24 @@ nav {
   position: relative;
   overflow: hidden;
 }
+.hero-bg-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.1;
+  z-index: 0;
+}
+.hero-content, .hero-visual { position: relative; z-index: 1; }
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
   background: radial-gradient(ellipse at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 60%);
   pointer-events: none;
+  z-index: 0;
 }
 .hero::after {
   content: '';
@@ -240,7 +252,13 @@ nav {
   border-color: #fff;
 }
 .hero-visual { text-align: center; margin-top: 48px; position: relative; z-index: 1; }
-.hero-pizza { font-size: 5rem; animation: float 3s ease-in-out infinite; }
+.hero-pizza {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.25));
+}
 .hero-tagline {
   font-size: 0.85rem;
   color: rgba(255,255,255,0.65);
@@ -337,6 +355,21 @@ nav {
   transform: translateY(-2px);
 }
 .fav-emoji { font-size: 2rem; margin-bottom: 12px; }
+.fav-img {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+.fav-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+  display: block;
+}
+.fav-card:hover .fav-img img { transform: scale(1.06); }
 .fav-name { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 6px; font-family: 'Playfair Display', serif; }
 .fav-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.55; }
 
